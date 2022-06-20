@@ -1,0 +1,52 @@
+HTML
+1.The file extension must be .html or .htm
+2.The file name must be index.html , because its default path of our homepage or the root of our website
+3.html - hyper text markup language
+4.Tags
+       <h1>Heading</h1> 
+
+
+What is the difference between html tag and element
+
+opening tag       closing tag
+  |                 |
+<h1> Hello World  </h1>
+  |                 |
+   ---element -------
+
+h1 opening tag , closing tag and the content inside it called as element
+
+<!DOCTYPE html> -----> this tells browswer that this is  html5
+<html>          ------> Root of html document
+    <head>      --------> contains info about html document
+        <title> HTML Course </title>
+    </head>
+    <body>      --------------> contains everything u want to display on webpage
+        <h1> Hello Welcome to HTML  </h1>    
+    </body>
+</html>
+
+To tell in which language iam writing , can be specified in html tag
+<html lang="en"> --------> lang="en" specifies that the written code is in English
+
+5.HTML is not case sensitive
+
+============================================================================================================================================================
+
+Every Website is HTML and CSS
+
+HTML - structure
+CSS - style
+
+like bones - HTML
+flesh,skin - CSS
+
+Software or Tool required
+1.Web browser - chrome , edge , firefox
+2.Text Editor - vscode
+
+===================================================
+Create first HTML file
+
+
+
