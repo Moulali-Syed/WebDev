@@ -48,5 +48,320 @@ Software or Tool required
 ===================================================
 Create first HTML file
 
+Any .html file will be displayed on the browser
+Errors will not be displayed , instead it will show the data  based on its prediction
+
+How can we see others code, what is written?
+rightClick -view page source |  or Ctrl+u
+
+To save a webpage offline?
+ctrl+s 
+===================================================
+
+Basic HTML page
+
+<!DOCTYPE html>   -----------> denotes this document is html5 page
+<html>              ------------> root tag
+  <head>               --------------> head has metadata - data about data
+    <title> this is html page </title>
+  </head>
+  <body>
+      <p> this is paragraph </p>
+  </body>
+
+</html>
+
+===================================================
+
+DOCTYPE
+<!DOCTYPE html>    ---- tells type of document
+
+===================================================
+
+anything in html that is visible is element - paragraph link image video
+attribute - additional info about attribute
+
+<tagName>content</tagName>
+<-----Element------------->
+
+<tagName attribute1="value">Content</tagName>
+<p width="100px"> This is p tag </p>
+
+<img src="image.png"> ---------->empty html tag [image]
+
+<br> -------> line break
+===================================================
+Indentation - 
+
+install prettier code will indented on save
+
+===================================================
+
+Comments
+Include comments so that code has description
+<!-- comment here -->
+
+===================================================
+
+Headings:
+to get value in google search results 
+
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+to get horizontal rule - <hr/>
+===================================================
+paragraph
+
+<p> THis is a paragraph </p>
+extra spaces , line breaks are removed automatically in p tag
+
+to add line break , use <br/> tag
+
+to show as what we have written in code , the same in browser then use pre tag
+<pre></pre>
+===================================================
+HTML formatting:
+
+<b></b>  - to make text bold
+<strong> </strong>  - makes text bold , and also mean that this word is having some value in this webpage and also Search engine also consider that
+this word is having some importance in this webpage
+
+<i></i> -  makes text italic
+<em></em> - makes text italic  , some emphasized 
+
+<small></small> - makes the fontsize smaller
+
+<mark></mark> - this highlights the same way as highlighter , highlights
+
+<del></del> - this will give a cross line on text , denoting that it is removed
+<ins></ins> - underline , means it is inserted
+
+x<sub>2</sub> - x
+                  2
+
+x<sup>2</sup> - x^2 
+===================================================
+Quotation and Citation:
+
+<q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, rem?</q>
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, rem?"  - gives double quote
+
+<blockquote> text </blockquote>  - this will leave some space on both sides on webpage , this is quote taken from someone
+
+<blockquote cite="https://www.google.com"> text </blockquote>
+
+
+<abbr title="WorldHealthOrganisation">WHO</abbr>
+
+ <address>Delhi , India</address>
+
+ cite tag we use to tell that this is title of somebook , very rarely used
+ <cite>The Lostkid</cite> is written by ......
+
+===================================================
+
+HTML Links:
+    <a href="https://google.com">ReadMore</a>
+    <!-- href is very important in a tag , to behave as link-->
+    <a href="#" target="_blank">ReadMore</a>
+    <!-- opens in a new window -->
+    <a href="#" title="gotoGoogle">ReadMore</a>
+    <!-- gives hint when we hover on link -->
+
+    <!-- When we click on link , it will take to content in same page -->
+    <!-- to create a local link we must create id -->
+    <a href="#idname">ReadMore</a>
+===================================================
+
+
+Email links:
+
+  <p>
+      Contact us on <a href="mailto:admin@website.com">admin@website.com</a> ----> sets mailId
+    </p> 
+    <p>
+      Contact us on
+      <a href="mailto:admin@website.com?subject=hello how r u"
+        >admin@website.com</a
+      >   ----------> sets subject line along with mail id
+    </p>
+===================================================
+
+image
+
+  <img src="image.png" alt="simpleImage"  width="100"  height="100" />
+===================================================
+
+Marquee: - deprecated from html5
+
+ <marquee behavior="" direction="right">This is a moving text</marquee>
+    <!-- default is right to left, we can give right ,left,up,down - we can have image in between the marquee tag-->
+
+===================================================
+
+Lists:
+
+OrderedList
+
+  <!-- by default numeric ,  using start attribute we can change the starting number-->
+    <!-- using type attribute we can specify type="1" / "A"/"a" / i-->
+    <!-- we can also have nested lists -->
+    <ol start="11" type="1">
+      <li>Apple</li>
+
+      <li>Banana</li>
+      <li>Mango</li>
+    </ol>
+
+    <ol>
+      <li>
+        Apple
+        <ol>
+          hello
+        </ol>
+      </li>
+    </ol>
+
+===================================================
+ <!-- style="list-style-type: disc" /circle / square /none-->
+    <ul style="list-style-type: disc">
+      <li>
+        Coffee
+
+        <ul>
+          <li>Black Coffee</li>
+          <li>Mocha</li>
+        </ul>
+      </li>
+      <li>Cool Drink</li>
+    </ul>
+    <!-- ordered can be in unorderedlist and viceversa -->
+===================================================
+Description list
+
+    <!-- dl- description List , dt-descriptionTerm , dd-description -->
+    <dl>
+      <dt>Coffee</dt>
+      <dd>A black hot drink</dd>
+      <dt>Milk</dt>
+      <dd>A white cool drink</dd>
+    </dl>
+===================================================
+
+HTML Table
+
+has columns - vertical , rows - horizontal
+
+  <!--  attributes - border |  colspan="2" | rowspan="2"-->
+    <table border="1">
+      <caption>
+        Tablename
+      </caption>
+      <tr>
+        <th>Column1</th>
+        <th>Coulmn2</th>
+        <th>Coulmn3</th>
+      </tr>
+      <tr>
+        <td>Fname</td>
+        <td>LName</td>
+        <td>Place</td>
+      </tr>
+      <tr>
+        <td>Apple</td>
+        <td>red</td>
+        <td>Shimla</td>
+      </tr>
+      <tr>
+        <td>Apple</td>
+        <td>red</td>
+        <td>Shimla</td>
+      </tr>
+    </table>
+
+    <table border="1">
+      <thead style="color: red">
+        <th>Column1</th>
+        <th>Coulmn2</th>
+        <th>Coulmn3</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fname</td>
+          <td>LName</td>
+          <td>Place</td>
+        </tr>
+        <tr>
+          <td>Apple</td>
+          <td>red</td>
+          <td>Shimla</td>
+        </tr>
+        <tr>
+          <td>Apple</td>
+          <td>red</td>
+          <td>Shimla</td>
+        </tr>
+      </tbody>
+      <tfoot style="color: red">
+        <th>Column1</th>
+        <th>Coulmn2</th>
+        <th>Coulmn3</th>
+      </tfoot>
+    </table>
+
+===================================================
+  <!-- Nested table -->
+    <table border="1">
+      <tr>
+        <td>column</td>
+        <td>
+          <table border="1">
+            <tr>
+              <td>col1</td>
+              <td>col2</td>
+            </tr>
+            <tr>
+              <td>col3</td>
+              <td>col4</td>
+            </tr>
+          </table>
+        </td>
+        <td>Column</td>
+      </tr>
+    </table>
+===================================================
+div and span
+
+
+
+
+
+
+
+===================================================
+
+
+
+
+
+
+
+
+
+
+
+===================================================
+
+
+
+
+
 
 

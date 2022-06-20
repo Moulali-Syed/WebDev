@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>This is an html page</p>
+
+    <h1>Heading 1</h1>
+    <hr />
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quo
+      aspernatur in? Assumenda inventore eaque, quae veritatis hic neque sint
+      beatae molestiae aliquid? Quos soluta adipisci optio incidunt! Odit dolor
+      facere provident autem at accusantium impedit est molestias natus aliquid
+      mollitia maiores aut fugit quibusdam, saepe quod nostrum asperiores
+
+      <br /><br />
+      eligendi et ea corrupti obcaecati. Voluptatem quo repellat iure nisi
+      expedita beatae est, ipsa repudiandae eius rem, voluptatum consequatur
+      possimus odit incidunt laboriosam dolorem harum, eos numquam modi delectus
+      id nam. Consequuntur modi quisquam quos ab, rem eius possimus. Obcaecati
+      libero ut quas optio vitae necessitatibus similique accusamus eaque, animi
+      hic?
+    </p>
+
+    <pre>
+        edksdg
+        khsdf
+
+        asdf
+
+
+        asfg   asdf
+    </pre>
+
+    x<sub>2</sub>
+
+    <q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, rem?</q>
+
+    <abbr title="WorldHealthOrganisation">WHO</abbr>
+
+    <address>Delhi , India</address>
+    <cite>The Lostkid</cite> is written by ......
+
+    <a href="https://google.com">ReadMore</a>
+    <!-- href is very important in a tag , to behave as link-->
+    <a href="#" target="_blank">ReadMore</a>
+    <!-- opens in a new window -->
+    <a href="#" title="gotoGoogle">ReadMore</a>
+    <!-- gives hint when we hover on link -->
+
+    <!-- When we click on link , it will take to content in same page -->
+    <!-- to create a local link we must create id -->
+    <a href="#idname">ReadMore</a>
+
+    <p>
+      Contact us on <a href="mailto:admin@website.com">admin@website.com</a>
+    </p>
+    <p>
+      Contact us on
+      <a href="mailto:admin@website.com?subject=hello how r u"
+        >admin@website.com</a
+      >
+    </p>
+
+    <img src="image.png" alt="simpleImage" />
+
+    <marquee behavior="" direction="right">This is a moving text</marquee>
+    <!-- default is right to left, we can give right ,left,up,down - we can have image in between the marquee tag-->
+
+    <!-- by default numeric ,  using start attribute we can change the starting number-->
+    <!-- using type attribute we can specify type="1" / "A"/"a" / i-->
+    <!-- we can also have nested lists -->
+    <ol start="11" type="1">
+      <li>Apple</li>
+
+      <li>Banana</li>
+      <li>Mango</li>
+    </ol>
+
+    <ol>
+      <li>
+        Apple
+        <ol>
+          hello
+        </ol>
+      </li>
+    </ol>
+
+    <!-- style="list-style-type: disc" /circle / square /none-->
+    <ul style="list-style-type: disc">
+      <li>
+        Coffee
+
+        <ul>
+          <li>Black Coffee</li>
+          <li>Mocha</li>
+        </ul>
+      </li>
+      <li>Cool Drink</li>
+    </ul>
+    <!-- ordered can be in unorderedlist and viceversa -->
+
+    <!-- dl- description List , dt-descriptionTerm , dd-description -->
+    <dl>
+      <dt>Coffee</dt>
+      <dd>A black hot drink</dd>
+      <dt>Milk</dt>
+      <dd>A white cool drink</dd>
+    </dl>
+
+    <!--  attributes - border |  colspan="2" | rowspan="2"-->
+    <table border="1">
+      <caption>
+        Tablename
+      </caption>
+      <tr>
+        <th>Column1</th>
+        <th>Coulmn2</th>
+        <th>Coulmn3</th>
+      </tr>
+      <tr>
+        <td>Fname</td>
+        <td>LName</td>
+        <td>Place</td>
+      </tr>
+      <tr>
+        <td>Apple</td>
+        <td>red</td>
+        <td>Shimla</td>
+      </tr>
+      <tr>
+        <td>Apple</td>
+        <td>red</td>
+        <td>Shimla</td>
+      </tr>
+    </table>
+
+    <table border="1">
+      <thead style="color: red">
+        <th>Column1</th>
+        <th>Coulmn2</th>
+        <th>Coulmn3</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fname</td>
+          <td>LName</td>
+          <td>Place</td>
+        </tr>
+        <tr>
+          <td>Apple</td>
+          <td>red</td>
+          <td>Shimla</td>
+        </tr>
+        <tr>
+          <td>Apple</td>
+          <td>red</td>
+          <td>Shimla</td>
+        </tr>
+      </tbody>
+      <tfoot style="color: red">
+        <th>Column1</th>
+        <th>Coulmn2</th>
+        <th>Coulmn3</th>
+      </tfoot>
+    </table>
+
+    <!-- Nested table -->
+    <table border="1">
+      <tr>
+        <td>column</td>
+        <td>
+          <table border="1">
+            <tr>
+              <td>col1</td>
+              <td>col2</td>
+            </tr>
+            <tr>
+              <td>col3</td>
+              <td>col4</td>
+            </tr>
+          </table>
+        </td>
+        <td>Column</td>
+      </tr>
+    </table>
+
+    <!-- div | span -->
+    <!-- div - block element -->
+    <!-- span - inline element -->
+  </body>
+</html>
