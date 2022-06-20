@@ -214,6 +214,165 @@ pre , section , table , tfoot , ul , video  -->
 
     <!-- iframe -->
     <iframe src="https://www.ndtv.com/" height="500" width="1000"></iframe>
-    <iframe src="https://aajtak.intoday.in/" height="500" width="1000"></iframe>
+    <!-- <iframe src="https://aajtak.intoday.in/" height="500" width="1000"></iframe> -->
+
+    <!-- audio -->
+    <audio controls>
+      <source src="audio.mp3" type="audio/mpeg" />
+      <source src="audio.ogg" type="audio/ogg" />
+      Your browser doesnot support audio files
+    </audio>
+
+    <!-- video -->
+    <video controls>
+      <source src="video.mp4" type="video/mp4" />
+      <source src="video.ogg" type="video/ogg" />
+      your browser doesnot support video
+    </video>
+
+    <video autoplay width="1000" height="500">
+      <source src="video.mp4" type="video/mp4" />
+    </video>
+
+    <!-- add pdf , we can do in below 3 ways -->
+    <embed src="pdf.pdf" type="application/pdf" width="1000" height="500" />
+    <iframe src="pdf.pdf" width="800" height="800"></iframe>
+    <object
+      data="pdf.pdf"
+      width="1200"
+      height="400"
+      type="application/pdf"
+    ></object>
+
+    <!-- embed youtube video -->
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/Qe-YdjUAPiM"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
+    <!-- embed map -->
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.562064237217!2d77.22732101489291!3d28.612911982425636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2daa9eb4d0b%3A0x717971125923e5d!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1655734690067!5m2!1sen!2sin"
+      width="800"
+      height="600"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+    <!-- html entities -->
+    <!-- can be written in 2 ways - name | number -->
+    <!-- &name;
+    &#number; -->
+
+    &lt;div&gt;
+    <!-- <div> -->
+
+    &#60;div&#62;
+
+    <p>hello &nbsp; world</p>
+    <!-- &nbsp; - creates a space -->
+
+    <!-- html symbols , search html symbols and check their name/number-->
+    &copy; &#8508;
+
+    <img src="workplace.png" alt="workplace" usemap="#workplace" />
+    <map name="#workplace">
+      <area
+        shape="rect"
+        coords="34,44,270,350"
+        href="https://www.amazon.in/s?k=mobiles&crid=1TNLG6DCWKMOU&sprefix=mobiles%2Caps%2C291&ref=nb_sb_noss_1"
+        alt=""
+      />
+
+      <area
+        shape="rect"
+        coords="290,172,333,250"
+        href="https://www.amazon.in/s?k=laptop&crid=2VFVXZOU1CW7L&sprefix=laptop%2Caps%2C293&ref=nb_sb_noss_1"
+        alt=""
+      />
+    </map>
+
+    <!-- form -->
+    <!-- method we can give get/post , action we can specify where form data should go -->
+    <!-- by default method is get , by default form submits to same page-->
+    <form method="GET" action="">
+      <div>
+        <input type="text" />
+      </div>
+      <div>
+        <input type="submit" value="SubmitForm" />
+      </div>
+      <div>
+        SubmitButton:
+        <input type="submit" /><br />
+      </div>
+      <div><input type="color" /><br /></div>
+      <div>
+        <input type="date" />
+      </div>
+      <div>
+        <input type="email" />
+      </div>
+      <div>
+        <input
+          type="hidden"
+          value="Delhi"
+        /><!-- very useful type , whenever we wamt to send some data-->
+      </div>
+      <div>
+        <input type="number" />
+      </div>
+      <div>
+        <input type="password" />
+      </div>
+      <div>
+        <input type="reset" />
+      </div>
+      <div>
+        <input type="time" />
+      </div>
+      <div>
+        <input type="url" name="" id="" />
+      </div>
+
+      <div>
+        <input type="range" /><!-- useful in designing ecommerce websites-->
+      </div>
+      <div>
+        <input type="range" min="1000" max="5000" />
+      </div>
+    </form>
+
+    <!-- must specify enctype for file upload -->
+    <form enctype="multipart/form-data">
+      <!-- to select multiple files, use multiple attribute -->
+      <input type="file" multiple />
+    </form>
+
+    <form>
+      <!-- readonly , then we cannot change -->
+      <!--  disabled , to show a field is disabled -->
+      <!-- value attribute can be used to show the value -->
+      <input type="text" value="apple" readonly disabled />
+      <!-- only 50 characters will be shown , how many characters we enter -->
+      <input type="text" size="50" />
+      <!-- maxlength - only 20 characters will be allowed -->
+      <input type="text" maxlength="20" />
+      <input type="submit" value="go" />
+      <input type="number" min="10" max="20" />
+      <input type="text" placeholder="Enter your name" required />
+      <input type="number" value="1" step="2" />
+      <input type="text" autofocus />
+      <!-- to show suggestions , once we visit website , use autocomplete="on" -->
+      <input type="text" autocomplete="on" />
+    </form>
   </body>
 </html>
