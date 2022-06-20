@@ -340,23 +340,25 @@ has columns - vertical , rows - horizontal
 div and span
 
 
+    <!-- div | span -->
+    <!-- div - block element -->
+    <!-- span - inline element -->
+    <!-- div - a block element always start on a new line and takes up the full
+    width available (stretches out to the left and right as far as it can)
+    -->
+    <!-- block elements
+    address , article , aside , blockquote , canvas , dd , div,dl , fieldset , figcaption 
+  figure , footer , form , h1 - h6 , header , hr , li , main , nav , noscript , ol , p ,
+pre , section , table , tfoot , ul , video  -->
 
-
-
-
-
+    <!-- span - inline element doesnot start on a new line and only takes up as much width as necessary -->
+    <div style="border: 1px solid red">random text</div>
+    <span style="border: 1px solid red">random text</span>
 ===================================================
-
-
-
-
-
-
-
-
-
-
-
+iframe: tp show website made by someone in our website
+    <!-- iframe -->
+    <iframe src="https://www.ndtv.com/" height="500" width="1000"></iframe>
+    <iframe src="https://aajtak.intoday.in/" height="500" width="1000"></iframe>
 ===================================================
 
 
