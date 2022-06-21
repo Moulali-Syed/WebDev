@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <script>
+      alert('hello');
+    </script>
   </head>
   <body>
     <p>This is an html page</p>
@@ -456,6 +460,29 @@ pre , section , table , tfoot , ul , video  -->
         <option value="grapes"></option>
       </datalist>
       <input type="submit" value="Search" />
+    </form>
+
+    <form>
+      <!-- give label for input field  -->
+      <div>
+        <label for="fname">FirstName :</label>
+        <input id="fname" type="text" name="first_name" /><br />
+      </div>
+      <div>
+        <input type="submit" />
+      </div>
+    </form>
+
+    <form>
+      <!-- fieldset and legend -->
+      <!-- field set creates a border , legend displays text on that border -->
+      <fieldset>
+        <legend>Basic Information:</legend>
+        <label for="fname">First Name</label>
+        <input type="text" name="first_name" id="fname" />
+        <label for="lname">LastName </label>
+        <input type="text" name="last_name" id="lname" />
+      </fieldset>
     </form>
   </body>
 </html>

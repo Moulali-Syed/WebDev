@@ -665,13 +665,105 @@ Checkbox:
 ===================================================
 
 DataList:
+    <form>
+      <!-- to link the datalist with input , give the id and list attribute values same -->
+      Search <input type="text" list="search" />
+
+      <datalist id="search">
+        <option value="apple"></option>
+        <option value="mango"></option>
+        <option value="banana"></option>
+        <option value="grapes"></option>
+      </datalist>
+      <input type="submit" value="Search" />
+    </form>
+
+===================================================
+label , fieldset and legend
+    <form>
+      <!-- give label for input field  -->
+      <div>
+        <label for="fname">FirstName :</label>
+        <input id="fname" type="text" name="first_name" /><br />
+      </div>
+      <div>
+        <input type="submit" />
+      </div>
+    </form>
+
+    <form>
+      <!-- fieldset and legend -->
+      <!-- field set creates a border , legend displays text on that border -->
+      <fieldset>
+        <legend>Basic Information:</legend>
+        <label for="fname">First Name</label>
+        <input type="text" name="first_name" id="fname" />
+        <label for="lname">LastName </label>
+        <input type="text" name="last_name" id="lname" />
+      </fieldset>
+    </form>
+===================================================
+SEO tags:
+
+5 tags are important for search engine optimisation
+1.<title> HomePage </title>
+2.give description using meta tag 
+  <meta name="description" content="This is a page about new car" />
+3.use keyword
+  <meta name="keywords" content="new,car"/>
+4.cannonical tag -  identical content in different pages , we can specify the other page url
+  <link rel="canonical" href="car.html" />
+
+5.robots
+  <meta name="robots" content="index, follow" />
+if noindex is given google will not list our webpage on search results , so never use it
+if nofollow , then it will not follow the links attached in our webpage
+
+===================================================
+Favicon:
+
+download a image ,
+inside head tag
+<link rel="icon" href="favicon.jpg" type="image/jpeg" />
 
 
+go to google search favicon generator - use this website - https://realfavicongenerator.net/
 
+===================================================
+style in head tag:
 
+1.use style tag 
+  <style>  </style>
+2.use a .css file and then link it
+
+===================================================
+script and noscript tag
+
+<script src="js/script.js"></script> 
+
+to tell if js is not accessible on a browser , n we want to tell to enable javascript
+
+<noscript> Please enable javascript in browser </noscript>
 
 
 ===================================================
+open graph and twitter card tag 
 
+we have facebook , twitter card tags we can place them in head tag
 
+===================================================
+Viewport meta tag:
 
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+===================================================
+Right to Left website:
+
+we have a attribute direction
+
+<html dir="ltr"/> ----default
+<html dir="rtl"/> ----- text will be right to left 
+===================================================
+html validation:
+
+search w3c validation - https://validator.w3.org/
