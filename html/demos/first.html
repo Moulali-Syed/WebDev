@@ -373,6 +373,89 @@ pre , section , table , tfoot , ul , video  -->
       <input type="text" autofocus />
       <!-- to show suggestions , once we visit website , use autocomplete="on" -->
       <input type="text" autocomplete="on" />
+
+      <!-- name attribute- very useful to know which is the field that is getting received -->
+      <input type="text" name="first_name" />
+    </form>
+
+    <form>
+      <!-- value attribute is not used in textarea -->
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="enter description"
+      ></textarea>
+
+      <!-- image button -->
+      <input
+        type="image"
+        src="https://www.behalacollege.in/pg/images/btn.png"
+        height="100"
+        width="50"
+      />
+    </form>
+
+    <form>
+      <!-- dropdown -->
+      <!-- to get default selection , use selected attribute -->
+      <select>
+        <option value="audi">audi</option>
+        <option value="tata" selected>tata</option>
+        <option value="bmw">bmw</option>
+      </select>
+
+      <!-- to change number of visible options , use size attribute -->
+      <select size="2">
+        <option value="audi">audi</option>
+        <option value="tata" selected>tata</option>
+        <option value="bmw">bmw</option>
+      </select>
+
+      <!-- optgroup -->
+      <select size="2">
+        <optgroup label="Car">
+          <option value="audi">audi</option>
+          <option value="tata" selected>tata</option>
+          <option value="bmw">bmw</option>
+        </optgroup>
+        <optgroup label="Sports">
+          <option value="Cricket">Cricket</option>
+          <option value="Hockey" selected>Hockey</option>
+          <option value="Kabadi">Kabadi</option>
+        </optgroup>
+      </select>
+    </form>
+
+    <form>
+      <!-- inorder to select only one radio button , all the radio buttons must have same name attribute value -->
+      <input type="radio" name="gender" value="male" />male
+      <input type="radio" name="gender" value="female" />female
+      <input type="radio" name="gender" value="others" />others
+
+      <input type="radio" name="emptype" value="developer" />developer
+      <input type="radio" name="emptype" value="manager" />manager
+    </form>
+
+    <form>
+      <!-- used when we want to select more than one element ,though name attribute is same we can still select multiple checkbox -->
+      <input type="checkbox" name="sports" />Cricket
+      <input type="checkbox" name="sports" />Hockey
+      <input type="checkbox" name="sports" />football
+    </form>
+
+    <form>
+      <!-- to link the datalist with input , give the id and list attribute values same -->
+      Search <input type="text" list="search" />
+
+      <datalist id="search">
+        <option value="apple"></option>
+        <option value="mango"></option>
+        <option value="banana"></option>
+        <option value="grapes"></option>
+      </datalist>
+      <input type="submit" value="Search" />
     </form>
   </body>
 </html>
