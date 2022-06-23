@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #div1 {
+        background-color: blueviolet;
+        height: 500px;
+        width: 500px;
+      }
+      #div1 {
+        background-color: blueviolet;
+        height: 500;
+        /* 70% of width means , it will occupy 70% of its parent element width */
+        width: 70%;
+        /* this will restrict width to 500px */
+        max-width: 500px;
+        /* restricts max height */
+        max-height: 300px;
+        min-width: 300px;
+        min-height: 300px;
+      }
+
+      #div1 {
+        border: 1px solid red;
+        padding: 50px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        padding-right: 80px;
+        padding-left: 20%;
+      }
+
+      #div1 {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        margin-left: 60px;
+        margin-right: 10%;
+
+        margin: 25px;
+
+        /* to  make horizontal center */
+        margin: 20px auto;
+
+        /* margin collapse */
+        /* means whichever is highest margin it will be applied , but not the combined sum of margin */
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="div1">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, distinctio.
+      Minus maxime eius consequatur recusandae corporis deleniti harum optio in,
+      enim ut qui voluptate praesentium.
+    </p>
+  </body>
+</html>

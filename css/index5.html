@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #text {
+        /* to change text color */
+        color: blue;
+
+        /* to align text */
+        /* by default is left , we can align it right , center */
+        text-align: center;
+
+        /* like newspaper , content will be spread all the width and height */
+        text-align: justify;
+        /* change direction */
+        direction: rtl;
+
+        /* decorate text */
+        /* by default text decoration is null */
+        text-decoration: underline;
+        /* we can use overline , underline , line-through */
+
+        /* text transform */
+        text-transform: uppercase;
+        /* lowercase , Capitalize */
+
+        line-height: 1.4;
+        letter-spacing: 2px;
+        word-spacing: 3px;
+
+        /* if we want the behavior of pre tag thru css use below */
+        white-space: pre;
+        white-space: nowrap;
+
+        /* if we have a word that is too long and going out of the container body , use word-wrap:break-word */
+        word-wrap: break-word;
+
+        /* text shadow */
+        font-size: 70px;
+        /* horizontal | move up down , if given negative moves up | blur | color */
+        text-shadow: 5px 10px 5px red;
+
+        /* to change writing to vertical */
+        writing-mode: vertical-lr;
+        /* vertical-rl */
+      }
+      /* if we have an image and we want to place it in between text content and style it then use below */
+      img {
+        border: 1px solid red;
+        /* vertical align : top|middle */
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem assumenda
+      nesciunt natus, et ea cum deleniti quas distinctio facilis quo?
+    </p>
+  </body>
+</html>

@@ -1,0 +1,509 @@
+CSS - cascading style sheets
+css describes how HTML elements are to be displayed on screen , paper or in other media
+HTML - what to display
+CSS  - How to Display 
+==========================================
+css syntax:
+
+selector {
+    propertyName : value;
+}
+
+p{
+    color:red;
+}
+==========================================
+How to add CSS
+External CSS |  Internal CSS  |  Inline CSS 
+
+1.add external css file
+ create a file style.css
+and in html file link that css file
+<link rel="stylesheet" href="./style.css" />
+we can add and link any number of external files , last file gets more priority
+
+2.Internal CSS 
+ inside head tag write the style tag
+  <style>
+      p {
+        color: blue;
+      }
+    </style>
+
+3.Inline CSS 
+  <p style="color: green; font-size: 12px">Paragraph 3</p>
+==========================================
+CSS Selectors:
+ we have 3 main Selectors
+ 1.element selector
+    p{
+      color:red;
+    }
+
+ 2.id selector
+
+    <p id="p3">paragraph</p>
+    #p3 {
+    color: yellowgreen;
+    }
+    only one id per element
+
+ 3.class selector
+    <p class="colo">paragraph</p>
+    .colo {
+      color: blue;
+    }
+    we can have any number of classes in a element
+
+<p class="colo underline" id="p1">Paragraph</p>
+
+order:
+    id > class > element
+==========================================
+Comments in CSS:
+/*  comment here  */
+
+==========================================
+Colors:
+in css colors can be specified using
+Predefined color names
+RGB
+RGBA
+HEX
+HSL
+HSLA
+
+modern browsers support 140 named colors
+we can see colors from https://htmlcolorcodes.com/color-names/
+
+RGB:
+red,green,blue
+color value between 0 and 255
+black - rgb(0,0,0)
+white - rgb(255,255,255)
+red - rgb(255,0,0)
+blue - rgb(0,0,255)
+green - rgb(0,255,0)
+
+RGBA
+red,green,blue,alpha
+aplha parameter is a number between 0.0(fully transparent) and 1.0 (not transparent at all)
+rgba(255,99,71,0.5)
+
+HEX:
+#rrggbb
+hexadecimal values between 00 and ff(same as decimal 0-255)
+red : #ff0000
+black : #000000
+white : #ffffff
+
+HSL
+hue,saturation , lightness
+hue is degree on color wheel from 0 to 360 . 0 is red ,120 is green , 240 is blue
+saturation is a percentage value ,0% means a shade of grey and 100% is full color
+lightness is also percentage , 0% is black , 50% is neither light or dark , 100% is white
+RED: hsl(0,100%,50%)
+
+HSLA:
+hue,saturation , lightness , alpha
+alpha parameter is a number between 0.0(fully transparent) and 1.0 (not transparent at all)
+hsla(0,100%,50%,0.5)
+==========================================
+Backgrounds:
+
+Which ever element has a height and width we can change its background
+
+    #bg {
+        background-color: blue;
+       }
+
+background image:
+    #bg {
+        background-image: url('./image.png');
+        /* this will repeat image multiple times to fit the element width and height */
+      }
+
+           #bg {
+        background-image: url('./image.png');
+        /* this will repeat image multiple times to fit the element width and height */
+        background-repeat: no-repeat;
+        /* to not repeat image use no-repeat */
+      }
+        #bg {
+        background-image: url('./image.png');
+        /* this will repeat image multiple times to fit the element width and height */
+        background-repeat: repeat-x;
+        /* to not repeat image on x-axis only */
+      }
+      similarly to repeat on y-axis , use background-repeat: repeat-y;
+      default is repeat , which repeats image on both x,y axis
+            #bg {
+        background-image: url('./image.png');
+        /* this will repeat image multiple times to fit the element width and height */
+        background-repeat: no-repeat;
+        /* to not repeat image  */
+        background-position: right top;
+        /* this displays image on top right corner, we can provide different values like center center | right center |... */
+      }
+
+       #bg {
+        background-image: url('./image.png');
+        /* this will repeat image multiple times to fit the element width and height */
+        background-repeat: no-repeat;
+        /* to not repeat image  */
+        background-position: right top;
+        /* this displays image on top right corner, we can provide different values like center center | right center |... */
+        background-size: 100% 100%;
+        /* fills the image size to full length and width of container */
+
+        background-attachment: fixed;
+        /* this makes image fixed , means only content will move but not image */
+      }
+
+           #bg {
+        background-size: 100% 100%;
+        /* background image will  */
+        background-size: cover;
+        /* this will cover entire container width and height , but this will cut the backgroundimage better use for patterns */
+
+        background-size: contain;
+        /* container and image ratio must be same when using contain */
+      }
+
+      shortcut background
+      #bg {
+        background: #fff url('./image.png') no-repeat fixed 5% 10%;
+      }
+
+multiple Backgrounds
+
+  #bg {
+        background-color: yellow;
+        background-image: url('./image.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+     #bg {
+        background-color: yellow;
+        background-image: url('./image.png'), url('./image.png');
+        background-repeat: no-repeat;
+        background-position: left top, right bottom;
+      }
+
+==========================================
+Borders:
+  #border {
+        border-style: solid;
+        border-style: dotted;
+        border-style: dashed;
+
+        border-style: double;
+        /* creates a frame */
+        border-style: groove;
+        border-style: ridge;
+        border-style: inset;
+        border-style: outset;
+        /* default is none */
+        border-style: none;
+        /* we must define border color , border width */
+
+        /* top right bottom left - clockwise */
+        border-style: solid dashed none dotted;
+
+        /* 1st-top,bottom  2nd - left,right */
+        border-style: solid dotted;
+
+        border-width: 5px;
+        border-width: 5px 10px;
+        border-width: 2px 4px 6px 8px;
+
+        border-color: red;
+        /* 1st- top  , 2nd-left,right , 3rd-bottom */
+        border-color: red green blue;
+
+        border: 5px solid green;
+
+        border-top-style: solid;
+        border-top-width: 10px;
+        border-top-color: red;
+
+        /* to curve border */
+        border-radius: 10px;
+
+        /* to make circle */
+        border-radius: 50%;
+
+        border-radius: 10px 20px;
+      }
+
+==========================================
+CSS Height and width:
+
+      #div1 {
+        background-color: blueviolet;
+        height: 500;
+        /* 70% of width means , it will occupy 70% of its parent element width */
+        width: 70%;
+        /* this will restrict width to 500px */
+        max-width: 500px;
+        /* restricts max height */
+        max-height: 300px;
+        min-width: 300px;
+        min-height: 300px;
+      }
+
+=============================================
+CSS Padding:
+gap between border and content
+      #div1 {
+        border: 1px solid red;
+        padding: 50px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        padding-right: 80px;
+        padding-left: 20%;
+      }
+
+=======================================
+CSS Margins:
+space between elements
+
+      #div1 {
+        margin-top: 50px;
+        margin-bottom: 20px;
+        margin-left: 60px;
+        margin-right: 10%;
+
+        margin: 25px;
+
+        /* to  make horizontal center */
+        margin: 20px auto;
+
+        /* margin collapse */
+        /* means whichever is highest margin it will be applied , but not the combined sum of margin */
+      }
+
+==========================================
+Box Model:
+
+margin
+  border  
+      padding
+------------  content--------
+
+When you set the width and height properties of an element with CSS , you just
+set the width and height of content area .to calculate the full size of an element
+you must also add padding , borders and margins  
+Total element width = width + left padding + right padding + left border + right border + left margin + right margin
+Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+==========================================
+CSS Text:
+
+
+
+
+
+
+==========================================
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+
+
+==========================================
