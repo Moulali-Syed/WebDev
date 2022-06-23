@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      /* a {
+        text-decoration: none;
+      }
+      a:link {
+        color: yellowgreen;
+      }
+      a:visited {
+        color: black;
+      }
+      a:hover {
+        color: orange;
+      }
+      a:active {
+        color: red;
+      }
+      p {
+        font-size: 30px;
+        font-weight: bold;
+        font-weight: 300;
+        font-style: italic;
+        font-variant: small-caps;
+      } */
+
+      #parent {
+        border: 1px solid red;
+        /* width: 100mm; */
+        /* width: 5in; */
+        /* width: 500px;
+        width: 500pt; */
+        /* width: 500pc; */
+
+        /* width: 800px; */
+        /* based on viewport height and width */
+        /* height: 50vh;
+        width: 50vw; */
+
+        font-size: 30px;
+      }
+      #child {
+        border: 1px solid blue;
+        /* 50% of parent div - 400px */
+        /* width: 50%; */
+        /* 2*parentFontSize = 2*30 =60px */
+        font-size: 2em;
+      }
+
+      html {
+        font-size: 10px;
+      }
+      #child {
+        /* 2*htmlFontSize = 2*10=20px */
+        font-size: 2rem;
+      }
+
+      #child {
+        /* if u want to change font based on width of screen then use vw , if based on height use  vh */
+        font-size: 4vw;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://google2.com">Google</a>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae,
+      expedita.
+    </p>
+
+    <div id="parent">
+      <p>This is parent text</p>
+      <div id="child">
+        <p>This is child text</p>
+      </div>
+    </div>
+  </body>
+</html>

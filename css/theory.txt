@@ -299,36 +299,193 @@ Total element width = width + left padding + right padding + left border + right
 Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
 ==========================================
 CSS Text:
+      #text {
+        /* to change text color */
+        color: blue;
 
+        /* to align text */
+        /* by default is left , we can align it right , center */
+        text-align: center;
 
+        /* like newspaper , content will be spread all the width and height */
+        text-align: justify;
+        /* change direction */
+        direction: rtl;
 
+        /* decorate text */
+        /* by default text decoration is null */
+        text-decoration: underline;
+        /* we can use overline , underline , line-through */
 
+        /* text transform */
+        text-transform: uppercase;
+        /* lowercase , Capitalize */
 
+        line-height: 1.4;
+        letter-spacing: 2px;
+        word-spacing: 3px;
+
+        /* if we want the behavior of pre tag thru css use below */
+        white-space: pre;
+        white-space: nowrap;
+
+        /* if we have a word that is too long and going out of the container body , use word-wrap:break-word */
+        word-wrap: break-word;
+
+        /* text shadow */
+        font-size: 70px;
+        /* horizontal | move up down , if given negative moves up | blur | color */
+        text-shadow: 5px 10px 5px red;
+
+        /* to change writing to vertical */
+        writing-mode: vertical-lr;
+        /* vertical-rl */
+      }
+      /* if we have an image and we want to place it in between text content and style it then use below */
+      img {
+        border: 1px solid red;
+        /* vertical align : top|middle */
+        vertical-align: middle;
+      }
+==========================================
+CSS Links:
+must follow LVHA order while styling link
+      a {
+        text-decoration: none;
+      }
+      a:link {
+        color: yellowgreen;
+      }
+      a:visited {
+        color: black;
+      }
+      a:hover {
+        color: orange;
+      }
+      a:active {
+        color: red;
+      }
 
 ==========================================
+Fonts:
+   p {
+        font-size: 30px;
+        font-weight: bold;
+        font-weight: 300;
+        font-style: italic;
+        font-variant: small-caps;
+        
+      }
+
+goto google fonts
+
+include the required font link in the html - head tag
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+Then in css use that
+font-family: 'Roboto', sans-serif;
 
 
+or we can download a font and use it as below by css
+@font-face{
+    font-family:abc;
+    src:url('fonts/Aclonica.ttf');
+}
+use as below
+h1{
+  font-family:abc;
+}
 
+shorthand:
+font: italic small-caps bold 20px sans-serif;
 
 ==========================================
+CSS Units:
+We use length in width , height , margin ,padding , font-size
+
+There are two types of units in css
+a.Absolute
+b.Relative
+
+Absolute                Relative
+Cm                      Em , Rem , Vh ,Vw , %
+Mm ,Inch ,px,pt,pc
 
 
+absolute units in css
+cm , mm , in , px(1inch=96px) , pt(1inch=72pt) ,pc (1pc=12pt)
 
+relative units
+em - em is relative to size of its direct parent
+if parent has 10 px and we assign 2em - then it will become 20px
 
+rem - rem is relative to root (html tag) size
 
+vh - 1% of view port height
+vw - 1% of viewport width 
 
-
-
+% - relative to parent
 ==========================================
+      /* a {
+        text-decoration: none;
+      }
+      a:link {
+        color: yellowgreen;
+      }
+      a:visited {
+        color: black;
+      }
+      a:hover {
+        color: orange;
+      }
+      a:active {
+        color: red;
+      }
+      p {
+        font-size: 30px;
+        font-weight: bold;
+        font-weight: 300;
+        font-style: italic;
+        font-variant: small-caps;
+      } */
 
+      #parent {
+        border: 1px solid red;
+        /* width: 100mm; */
+        /* width: 5in; */
+        /* width: 500px;
+        width: 500pt; */
+        /* width: 500pc; */
 
+        /* width: 800px; */
+        /* based on viewport height and width */
+        /* height: 50vh;
+        width: 50vw; */
 
+        font-size: 30px;
+      }
+      #child {
+        border: 1px solid blue;
+        /* 50% of parent div - 400px */
+        /* width: 50%; */
+        /* 2*parentFontSize = 2*30 =60px */
+        font-size: 2em;
+      }
 
+      html {
+        font-size: 10px;
+      }
+      #child {
+        /* 2*htmlFontSize = 2*10=20px */
+        font-size: 2rem;
+      }
 
-
-
-==========================================
-
+      #child {
+        /* if u want to change font based on width of screen then use vw , if based on height use  vh */
+        font-size: 4vw;
+      }
 
 
 
