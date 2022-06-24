@@ -42,6 +42,39 @@
         vertical-align: top;
         vertical-align: middle;
       }
+      :root {
+        --primary-color: teal;
+        --btn-color: blueviolet;
+        --text-color: white;
+      }
+      #fun {
+        background-color: var(--primary-color);
+        height: 200px;
+        width: calc(100% - 100px);
+      }
+      a {
+        padding: 10px 30px;
+        margin: 20px;
+        background-color: var(--btn-color);
+        color: var(--text-color);
+        text-decoration: none;
+      }
+      #div1 {
+        background-color: aqua;
+        width: 600px;
+        height: 200px;
+      }
+      #div2 {
+        background-color: magenta;
+        width: 600px;
+        height: 200px;
+        padding: 50px;
+        border: 10px solid black;
+
+        /* box-sizing: content-box; - is default  */
+        /* border-box , container size will get fixed once height , width is defined */
+        box-sizing: border-box;
+      }
     </style>
   </head>
   <body>
@@ -65,5 +98,18 @@
         <td>demo - 3</td>
       </tr>
     </table>
+
+    <div id="fun">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi,
+        veritatis.
+      </p>
+      <br />
+      <hr />
+      <a href="https://google.com">Google</a>
+    </div>
+
+    <div id="div1"></div>
+    <div id="div2"></div>
   </body>
 </html>

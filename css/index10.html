@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #green {
+        color: green;
+      }
+      #blue {
+        color: red;
+      }
+      #initial {
+        /* initial means whatever default css value is assigned will be taken , like link default color is blue */
+        color: initial;
+      }
+      #inherit {
+        /* inherit means it will take parent css value */
+        color: inherit;
+      }
+
+      img {
+        border: 1px solid red;
+        width: 500px;
+        height: 400px;
+        object-fit: contain;
+        object-fit: fill;
+        object-fit: cover;
+
+        /* object-position : top center , left center */
+        object-position: top center;
+      }
+      li:first-child {
+        color: red;
+      }
+      li:last-child {
+        color: blue;
+      }
+      li:nth-child(2) {
+        color: pink;
+      }
+      li:nth-child(even) {
+        color: aqua;
+      }
+      li:nth-child(odd) {
+        color: blueviolet;
+      }
+      li:nth-child(3n + 0) {
+        color: red;
+      }
+      li:nth-child(3n + 1) {
+        color: navy;
+      }
+      li:nth-last-child(2) {
+        color: khaki;
+      }
+      input:focus {
+        border: 3px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="green">
+      Green Text <br />
+      <a href="" id="blue">Link 1</a><br />
+      <a href="" id="initial">Link 2</a><br />
+      <a href="" id="inherit">Link 3</a><br />
+    </div>
+
+    <div>
+      <img src="./image.png" alt="apple" />
+    </div>
+
+    <p>This is p tag</p>
+    <p>This is p tag</p>
+    <p>This is p tag</p>
+    <p>This is p tag</p>
+    <p>This is p tag</p>
+
+    <ul>
+      <li>list item - 1</li>
+      <li>list item - 2</li>
+      <li>list item - 3</li>
+      <li>list item - 4</li>
+      <li>list item - 5</li>
+    </ul>
+
+    <input type="text" />
+  </body>
+</html>

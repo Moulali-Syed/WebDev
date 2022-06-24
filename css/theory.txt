@@ -696,56 +696,172 @@ CSS Lists:
 
 ==========================================
 CSS Tables:
+  <style>
+      table {
+        border: 1px solid red;
+        border-collapse: collapse;
+        /* to set border-spacing border-collapse should be default */
+        /*
+        border-collapse: separate;
+        border-spacing: 15px;
+*/
+        /* to hide empty cells */
+        empty-cells: hide;
+        /* table-layout : we have fixed , auto */
+        table-layout: auto;
+        width: 300px;
+      }
+      caption {
+        border: 1px solid red;
+      }
+      /* border will not be applied to rows */
+      /* tr {
+        border: 1px solid red;
+      } */
+      th {
+        border: 1px solid red;
+        height: 30px;
+        padding: 15px;
+        text-align: right;
+      }
+      td {
+        border: 1px solid red;
+        height: 25px;
+        padding: 5px;
+        text-align: center;
+        vertical-align: bottom;
+        vertical-align: top;
+        vertical-align: middle;
+      }
+    </style>
 
+     <table>
+      <caption>
+        Table CSS
+      </caption>
+      <tr>
+        <th>Heading - 1</th>
+        <th>Heading - 2</th>
+        <th>Heading - 3</th>
+      </tr>
+      <tr>
+        <td>COntent - 1</td>
+        <td>COntent - 2</td>
+        <td>COntent - 3</td>
+      </tr>
+      <tr>
+        <td>demo - 1</td>
+        <td>demo - 2</td>
+        <td>demo - 3</td>
+      </tr>
+    </table>
+==========================================
+CSS Functions:
 
+rgb()
+rgba()
+url()
+radial-gradient()
+linear-gradient()
+we have seen these above
 
-
-
+      :root {
+        --primary-color: teal;
+        --btn-color: blueviolet;
+        --text-color: white;
+      }
+      #fun {
+        background-color: var(--primary-color);
+        height: 200px;
+        width: calc(100% - 100px);
+      }
+      a {
+        padding: 10px 30px;
+        margin: 20px;
+        background-color: var(--btn-color);
+        color: var(--text-color);
+        text-decoration: none;
+      }
 
 ==========================================
+Box Sizing:
+      #div1 {
+        background-color: aqua;
+        width: 600px;
+        height: 200px;
+      }
+      #div2 {
+        background-color: magenta;
+        width: 600px;
+        height: 200px;
+        padding: 50px;
+        border: 10px solid black;
 
-
-
-
-
-
+        /* box-sizing: content-box; - is default  */
+        /* border-box , container size will get fixed once height , width is defined */
+        box-sizing: border-box;
+      }
+==========================================
+CSS Initial vs Inherit
+    <style>
+      #green {
+        color: green;
+      }
+      #blue {
+        color: red;
+      }
+      #initial {
+        /* initial means whatever default css value is assigned will be taken , like link default color is blue */
+        color: initial;
+      }
+      #inherit {
+        /* inherit means it will take parent css value */
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="green">
+      Green Text <br />
+      <a href="" id="blue">Link 1</a><br />
+      <a href="" id="initial">Link 2</a><br />
+      <a href="" id="inherit">Link 3</a><br />
+    </div>
+  </body>
 
 ==========================================
+Object fit:
+can be applied on image , video
 
+      img {
+        border: 1px solid red;
+        width: 500px;
+        height: 400px;
+        object-fit: contain;
+        object-fit: fill;
+        object-fit: cover;
 
-
-
-
-
-
-
-
-
+        /* object-position : top center , left center */
+        object-position: top center;
+      }
 ==========================================
+CSS Psuedo classes 
 
+selector:pseudo-class{
 
+}
+a:link{
 
+}
+a:hover{
 
+}
+a:visited{
 
-
-
-
-==========================================
-
-
-
-
-
-
-
-==========================================
-
-
-
-
-
-
-
+}
+a:active{
+  
+}
 ==========================================
 
 
