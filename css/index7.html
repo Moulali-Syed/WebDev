@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 1px solid green;
+        width: 500px;
+        background-color: yellowgreen;
+        margin: 100px;
+        padding: 20px;
+
+        /* box-shadow :  x y blur spread color */
+        box-shadow: 10px 10px 5px 3px grey;
+        /* to get shadow inside  */
+        /* box-shadow :  x y blur spread color inset*/
+        box-shadow: 10px 10px 5px 3px grey inset;
+
+        /* multiple shadow*/
+        /* negative x , y values will behave in opposite shadow */
+        box-shadow: 10px 10px 5px 3px grey, -10px -10px 5px 3px pink;
+      }
+      #color-box {
+        background-color: green;
+        height: 200px;
+        width: 500px;
+        margin-bottom: 20px;
+        /* opacity 0 - will become invisible , we can give any value between 0 to 1 */
+        opacity: 0.5;
+      }
+      img:hover {
+        opacity: 0.7;
+      }
+      #red-box {
+        height: 300px;
+        width: 200px;
+        background-color: red;
+        margin-top: -100;
+        /* to make transparent we can use opacity */
+        opacity: 0.5;
+      }
+
+      img {
+        filter: blur(10px);
+        filter: brightness(50%);
+        filter: contrast(70%);
+        /* we can apply shadow thru box-shadow */
+        filter: drop-shadow(8px 8px 5px red);
+
+        /* make blackNwhite */
+        filter: grayscale(50%);
+
+        filter: hue-rotate(90deg);
+
+        filter: invert(100%);
+
+        filter: opacity(30%);
+        filter: saturate(30%);
+        filter: sepia(30%);
+
+        /* we can apply multiple properties by comma seperated */
+        filter: brightness(80%), contrast(100%);
+      }
+
+      #sprite {
+        height: 64px;
+        background-image: url('./image.png');
+        background-repeat: no-repeat;
+        background-position: 0px -143px;
+      }
+
+      #gradient {
+        height: 500px;
+        border: 1px solid grey;
+        /* background-image: linear-gradient(green, blue); */
+        /* default direction is top to bottom */
+        background-image: linear-gradient(green, red, blue);
+        /* to change direction */
+        background-image: linear-gradient(to right, green, red, blue);
+        background-image: linear-gradient(to bottom right, green, red, blue);
+        background-image: linear-gradient(160deg, green, red, blue);
+
+        /* by default shape is eclipse */
+        background-image: radial-gradient(blue, red);
+        background-image: radial-gradient(green, blue, red);
+        /* we can specify shape */
+        background-image: radial-gradient(circle, blue, red);
+        /* we can specify the color with its respective percentage of occupied area */
+        background-image: radial-gradient(circle, green 20%, blue 30%, red 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>
+        hello Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio,
+        pariatur!
+      </p>
+    </div>
+
+    <div id="color-box"></div>
+    <img src="./image.png" alt="" />
+    <div id="red-box"></div>
+
+    <div id="sprite"></div>
+
+    <div id="gradient"></div>
+  </body>
+</html>

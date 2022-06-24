@@ -68,6 +68,36 @@
         /* if u want to change font based on width of screen then use vw , if based on height use  vh */
         font-size: 4vw;
       }
+      #cur {
+        border: 10px solid red !important;
+
+        /* default */
+        cursor: auto;
+        /*  display cursor as  arrow on 4 sides of + */
+        cursor: all-scroll;
+
+        /* display + */
+        cursor: cell;
+        /* display cursor as  <-||->*/
+        cursor: col-resize;
+        /* crosshair , + symbol */
+        cursor: crosshair;
+        /* <-> */
+        cursor: e-resize;
+        /* hand */
+        cursor: grab;
+        /* pointer with question mark */
+        cursor: help;
+        /* not allowed symbol */
+        cursor: not-allowed;
+        /* hand same as on link */
+        cursor: pointer;
+        /* progress */
+        cursor: progress;
+        /* wait  */
+        cursor: wait;
+        cursor: zoom-in;
+      }
     </style>
   </head>
   <body>
@@ -82,6 +112,10 @@
       <div id="child">
         <p>This is child text</p>
       </div>
+    </div>
+
+    <div>
+      <p id="cur">This is text</p>
     </div>
   </body>
 </html>

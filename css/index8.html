@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #overflow {
+        background-color: whitesmoke;
+        border: 1px solid red;
+        width: 500px;
+        height: 300px;
+        /* default */
+        overflow: visible;
+        /* we can hide overflow content */
+        overflow: hidden;
+        /*we can create a scroll within container  */
+        overflow: scroll;
+        /* we have overflow-x and overflow-y specific to direction */
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        /* we have overflow auto , so that scroll bar comes based on content */
+        overflow: auto;
+      }
+
+      textarea {
+        /* textarea by default is resizable , we can set it to none */
+        resize: none;
+      }
+      #overflow {
+        resize: both;
+        resize: horizontal;
+        resize: vertical;
+      }
+
+      ul {
+        list-style-type: none;
+        list-style-type: circle;
+        list-style-type: disc;
+        list-style-type: square;
+
+        list-style-image: url('./image.png');
+
+        /* default is outside */
+        list-style-position: outside;
+        list-style-position: inside;
+      }
+      ol {
+        list-style-type: lower-alpha;
+        list-style-type: upper-alpha;
+        list-style-type: lower-roman;
+        list-style-type: upper-roman;
+        list-style-type: decimal;
+        list-style-type: decimal-leading-zero;
+      }
+      li {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="overflow">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+        voluptate unde eos architecto, sit amet quasi illo est magni quidem ad
+        voluptates, quae ipsa odit sint nobis, corrupti ex enim optio placeat
+        dolorem ut debitis quibusdam. Quasi commodi porro ducimus, amet qui quis
+        sint. Non molestiae recusandae hic nihil culpa quam, iusto autem in
+        ullam veritatis adipisci possimus enim eius, fugit perspiciatis eligendi
+        impedit ex id iste omnis dolorum sunt. Ratione consectetur mollitia ab
+        rem hic eligendi, architecto magni magnam obcaecati accusantium
+        quibusdam placeat inventore neque odio, praesentium doloremque
+        asperiores repudiandae. Ipsam repellat dolorem saepe! Itaque rem debitis
+        tia deleniti consectetur debitis recusandae, vitae ipsa iste quo.
+      </p>
+    </div>
+    <div>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+
+    <ul>
+      <li>item-1</li>
+      <li>item-2</li>
+      <li>item-3</li>
+      <li>item-4</li>
+      <li>item-5</li>
+    </ul>
+
+    <ol>
+      <li>item-1</li>
+      <li>item-2</li>
+      <li>item-3</li>
+      <li>item-4</li>
+      <li>item-5</li>
+    </ol>
+  </body>
+</html>

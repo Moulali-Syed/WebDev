@@ -487,98 +487,215 @@ vw - 1% of viewport width
         font-size: 4vw;
       }
 
+==========================================
+CSS Cursor:
+      #cur {
+        border: 10px solid red;
 
+        /* default */
+        cursor: auto;
+        /*  display cursor as  arrow on 4 sides of + */
+        cursor: all-scroll;
 
+        /* display + */
+        cursor: cell;
+        /* display cursor as  <-||->*/
+        cursor: col-resize;
+        /* crosshair , + symbol */
+        cursor: crosshair;
+        /* <-> */
+        cursor: e-resize;
+        /* hand */
+        cursor: grab;
+        /* pointer with question mark */
+        cursor: help;
+        /* not allowed symbol */
+        cursor: not-allowed;
+        /* hand same as on link */
+        cursor: pointer;
+        /* progress */
+        cursor: progress;
+        /* wait  */
+        cursor: wait;
+        cursor: zoom-in;
+      }
+==========================================
+important
+ border: 10px solid red !important;
+==========================================
+CSS Box shadow:
+      div {
+        border: 1px solid green;
+        width: 500px;
+        background-color: yellowgreen;
+        margin: 100px;
+        padding: 20px;
 
+        /* box-shadow :  x y blur spread color */
+        box-shadow: 10px 10px 5px 3px grey;
+        /* to get shadow inside  */
+        /* box-shadow :  x y blur spread color inset*/
+        box-shadow: 10px 10px 5px 3px grey inset;
 
+        /* multiple shadow*/
+        /* negative x , y values will behave in opposite shadow */
+        box-shadow: 10px 10px 5px 3px grey, -10px -10px 5px 3px pink;
+      }
 
 ==========================================
-
-
-
-
-==========================================
-
-
-
-
-
-
-
-
-==========================================
-
-
-
-
-
-
-
-==========================================
-
-
-
-
-
-
+CSS Opacity:
+      #color-box {
+        background-color: green;
+        height: 200px;
+        width: 500px;
+        margin-bottom: 20px;
+        /* opacity 0 - will become invisible , we can give any value between 0 to 1 */
+        opacity: 0.5;
+      }
+      img:hover {
+        opacity: 0.7;
+      }
+      #red-box {
+        height: 300px;
+        width: 200px;
+        background-color: red;
+        margin-top: -100;
+        /* to make transparent we can use opacity */
+        opacity: 0.5;
+      }
 
 ==========================================
+CSS Filter:
+filter will be applied to image
 
+     img {
+        filter: blur(10px);
+        filter: brightness(50%);
+        filter: contrast(70%);
+        /* we can apply shadow thru box-shadow */
+        filter: drop-shadow(8px 8px 5px red);
 
+        /* make blackNwhite */
+        filter: grayscale(50%);
 
+        filter: hue-rotate(90deg);
 
+        filter: invert(100%);
 
+        filter: opacity(30%);
+        filter: saturate(30%);
+        filter: sepia(30%);
 
-
-
-==========================================
-
-
-
-
-
-
-
-
-==========================================
-
-
-
-
-
-
-
-==========================================
-
-
-
-
-
-
+        /* we can apply multiple properties by comma seperated */
+        filter: brightness(80%), contrast(100%);
+      }
 
 ==========================================
+Image sprites:
+suppose we have 3 flag images in single image , but we can use 3 flags seperately
+can be used as background images only
+when we have small images in our website , we can combine them and use it as background images
 
+   #sprite {
+        height: 64px;
+        background-image: url('./image.png');
+        background-repeat: no-repeat;
+        background-position: 0px -143px;
+      }
 
+      by changing background-position we can change the image to get displayed
+==========================================
+CSS Gradients:
+mixing 2 colors smoothly
+we have 2 types
+linear , radial gradients
 
+      #gradient {
+        height: 500px;
+        border: 1px solid grey;
+        /* background-image: linear-gradient(green, blue); */
+        /* default direction is top to bottom */
+        background-image: linear-gradient(green, red, blue);
+        /* to change direction */
+        background-image: linear-gradient(to right, green, red, blue);
+        background-image: linear-gradient(to bottom right, green, red, blue);
+        background-image: linear-gradient(160deg, green, red, blue);
 
-
-
-
-
-
-
+        /* by default shape is eclipse */
+        background-image: radial-gradient(blue, red);
+        background-image: radial-gradient(green, blue, red);
+        /* we can specify shape */
+        background-image: radial-gradient(circle, blue, red);
+        /* we can specify the color with its respective percentage of occupied area */
+        background-image: radial-gradient(circle, green 20%, blue 30%, red 50%);
+      }
 
 ==========================================
+CSS Overflow:
 
+content is beyond the container , we can control that using overflow 
+when we dont want to change container height , but want to display its content beyond container height
 
+      #overflow {
+        background-color: whitesmoke;
+        border: 1px solid red;
+        width: 500px;
+        height: 300px;
+        /* default */
+        overflow: visible;
+        /* we can hide overflow content */
+        overflow: hidden;
+        /*we can create a scroll within container  */
+        overflow: scroll;
+        /* we have overflow-x and overflow-y specific to direction */
+        overflow-x: hidden;
+        overflow-y: scroll;
 
-
-
-
-
+        /* we have overflow auto , so that scroll bar comes based on content */
+        overflow: auto;
+      }
 
 ==========================================
+CSS Resizable:
 
+      textarea {
+        /* textarea by default is resizable , we can set it to none */
+        resize: none;
+      }
+      #overflow {
+        resize: both;
+        resize: horizontal;
+        resize: vertical;
+      }
+
+==========================================
+CSS Lists:
+      ul {
+        list-style-type: none;
+        list-style-type: circle;
+        list-style-type: disc;
+        list-style-type: square;
+
+        list-style-image: url('./image.png');
+
+        /* default is outside */
+        list-style-position: outside;
+        list-style-position: inside;
+      }
+      ol {
+        list-style-type: lower-alpha;
+        list-style-type: upper-alpha;
+        list-style-type: lower-roman;
+        list-style-type: upper-roman;
+        list-style-type: decimal;
+        list-style-type: decimal-leading-zero;
+      }
+      li {
+        border: 1px solid black;
+      }
+
+==========================================
+CSS Tables:
 
 
 
