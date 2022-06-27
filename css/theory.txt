@@ -862,38 +862,419 @@ a:visited{
 a:active{
   
 }
+
+ <style>
+      #green {
+        color: green;
+      }
+      #blue {
+        color: red;
+      }
+      #initial {
+        /* initial means whatever default css value is assigned will be taken , like link default color is blue */
+        color: initial;
+      }
+      #inherit {
+        /* inherit means it will take parent css value */
+        color: inherit;
+      }
+
+      img {
+        border: 1px solid red;
+        width: 500px;
+        height: 400px;
+        object-fit: contain;
+        object-fit: fill;
+        object-fit: cover;
+
+        /* object-position : top center , left center */
+        object-position: top center;
+      }
+      li:first-child {
+        color: red;
+      }
+      li:last-child {
+        color: blue;
+      }
+      li:nth-child(2) {
+        color: pink;
+      }
+      li:nth-child(even) {
+        color: aqua;
+      }
+      li:nth-child(odd) {
+        color: blueviolet;
+      }
+      li:nth-child(3n + 0) {
+        color: red;
+      }
+      li:nth-child(3n + 1) {
+        color: navy;
+      }
+      li:nth-last-child(2) {
+        color: khaki;
+      }
+      input:focus {
+        border: 3px solid red;
+      }
+    </style>
+==========================================
+Psuedo elements
+it has 2 colons
+
+selector::pseudo-element{
+
+}
+
+      p::first-letter {
+        font-size: 35px;
+        color: red;
+      }
+      p::first-line {
+        font-size: 35px;
+        color: red;
+      }
+      /* to add a image[content] before heading  */
+      h1::before {
+        content: url(./image.png);
+      }
+      h1::after {
+        content: ' added after';
+      }
+      /* to change color when we select text on webpage */
+      ::selection {
+        color: red;
+        background: yellow;
+      }
+
+==========================================
+Display:
+
+in html every element will be a box , each element has a display property
+
+display we have 4 main values : block , inline , inline-block , none 
+default we have either block or inline
+
+block - whole line
+inline - upto content 
+
+block - div , p , h1 , form 
+inline - a , img , span 
+
+we can change display property of the element , block to inline and viceversa
+
+block - starts in new line , takes full width , we can give height and width
+inline - not in new line , no full width , cant apply height and width 
+inline-block - not in new line , no full width , but can take height and width 
+
+block :
+
+     .display {
+        border: 1px solid red;
+        width: 50%;
+        height: 100px;
+      }
+         <div class="display">This is a div 1</div>
+    <div class="display">This is a div 2</div>
+
+inline:
+
+   .display {
+        border: 1px solid red;
+        width: 50%;
+        height: 100px;
+        display: inline;
+      }
+
+inline-block
+      .display {
+        border: 1px solid red;
+        width: 50%;
+        height: 100px;
+        display: inline-block;
+      }
+
+display:none ;
+this will hide the element completely , as if the element doesnot exist in html
+  #div1 {
+        display: none;
+      }
+
+visibility:hidden;
+element is just hidden , but not removed from html
+      #div1 {
+        
+        visibility: hidden;
+      }
+==========================================
+position:
+
+we have
+      static 
+      relative
+      fixed
+      absolute
+
+top , bottom  , left , right
+
+static is the default property of all html elements - normal flow
+
+relative , fixed , absolute - on these 3 we can apply top , left , bottom , absolute 
+
+when we apply position:relative , when we specify top,left , bottom,right - then it will change its position
+based on its current position
+
+say we have given position relative , bottom 50px then it will move 50px bottom with respect to its default[static] position 
+
+     #two {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        display: inline-block;
+        position: relative;
+        bottom: 50px;
+        left: 30px;
+      }
+
+bottom 50px means it will move , 50px up from its current position
+
+
+absolute: when we apply position absolute , then it will change its position based on its positioned parent
+it will calculate its position based on the positioned parent 
+
+if there is no positioned parent , then it will calculate based on the body tag 
+
+   #two {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        display: inline-block;
+        position: absolute;
+        left: 30px;
+        top: 30px;
+      }
+
+fixed: though we scroll , the content will be fixed on the webpage 
+
+ #two {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        display: inline-block;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+      }
+we must specify top/bottom / left/right - if we r specifying position absolute or fixed and if we r not specifying top/bottom / left/right
+ it will leave its position , some other element after it will come in its place , below it 
+==========================================
+Layers and Z-index:
+
+layers
+#parent {
+        border: 1px solid red;
+        padding: 20px;
+        width: 50%;
+        position: relative;
+      }
+      #one {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        display: inline-block;
+        position: relative;
+      }
+      #two {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        display: inline-block;
+        position: relative;
+        top: 50px;
+        left: -50px;
+      }
+      #three {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        display: inline-block;
+        position: relative;
+        top: 100px;
+        left: -100px;
+      }
+
+z-index will work only if it has position : relative/absolute/fixed
+
+the higher z-index , it will appear on the top
+
+  #parent {
+        border: 1px solid red;
+        padding: 20px;
+        width: 50%;
+        position: relative;
+      }
+      #one {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        display: inline-block;
+        position: relative;
+        z-index: 3;
+      }
+      #two {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        display: inline-block;
+        position: relative;
+        top: 50px;
+        left: -50px;
+        z-index: 2;
+      }
+      #three {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        display: inline-block;
+        position: relative;
+        top: 100px;
+        left: -100px;
+        z-index: 1;
+      }
+==========================================
+CSS Float and clear:
+when we apply float on any element then we can move that element left , right 
+
+      img {
+        height: 200px;
+        width: 200px;
+        padding: 10px;
+      }
+      #img1 {
+        float: right;
+      }
+      #img2 {
+        float: left;
+      }
+
+when we apply float on the li elements which are inside ul element , all li will come outside of the container
+so must apply overflow:auto  on the container element , so that containing elements are within it
+navigation bar
+  ul {
+        background-color: green;
+        list-style-type: none;
+        /* border: 1px solid red; */
+        overflow: auto;
+      }
+      li {
+        color: white;
+        padding: 10px 10px;
+        float: left;
+      }
+
+we will tell whether a element can be on side of other floated element or not & also non floated element , we tell it thru clear
+clear can be applied on floated and non floated element
+
+when we apply clear on element , it will come in next line 
+
+when we want images to display one below other , when applied float , we can apply clear so that they appear one after other instead of side by side
+  p {
+        border: 1px solid red;
+        overflow: auto;
+      }
+      img {
+        width: 100px;
+        height: auto;
+      }
+
+      #img1 {
+        float: right;
+      }
+      #img2 {
+        float: right;
+        clear: right;
+      }
+
+
+clear can be applied on non floated element , 
+
+      #content {
+        width: 70%;
+        background-color: green;
+        height: 200px;
+        float: left;
+      }
+      #sidebar {
+        width: 30%;
+        background-color: indianred;
+        height: 150px;
+        float: left;
+      }
+
+      #footer {
+        width: 100%;
+        background-color: pink;
+        clear: both;
+      }
+
+          <div id="content">Content</div>
+    <div id="sidebar">Sidebar</div>
+    <div id="footer">Footer</div>
+==========================================
+
+==========================================
+
 ==========================================
 
 
 
+==========================================
 
+==========================================
 
-
-
+==========================================
 
 ==========================================
 
 
 
+==========================================
 
+==========================================
 
-
-
+==========================================
 
 ==========================================
 
 
 
+==========================================
 
+==========================================
 
-
+==========================================
 
 ==========================================
 
 
 
+==========================================
 
+==========================================
+
+==========================================
+
+==========================================
 
 
 
 ==========================================
+
+==========================================
+
+==========================================
+
+==========================================
+
+
+

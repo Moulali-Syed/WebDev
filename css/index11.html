@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 2000px;
+      }
+      p::first-letter {
+        font-size: 35px;
+        color: red;
+      }
+      p::first-line {
+        font-size: 35px;
+        color: red;
+      }
+      /* to add a image[content] before heading  */
+      h1::before {
+        content: url(./image.png);
+      }
+      h1::after {
+        content: ' added after';
+      }
+      /* to change color when we select text on webpage */
+      ::selection {
+        color: red;
+        background: yellow;
+      }
+      .display {
+        border: 1px solid red;
+        width: 50%;
+        height: 100px;
+        display: inline-block;
+      }
+      #div1 {
+        /* display: none; */
+        visibility: hidden;
+      }
+
+      #parent {
+        border: 1px solid red;
+        padding: 20px;
+        width: 50%;
+        position: relative;
+      }
+      #one {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        display: inline-block;
+        position: relative;
+        z-index: 3;
+      }
+      #two {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        display: inline-block;
+        position: relative;
+        top: 50px;
+        left: -50px;
+        z-index: 2;
+      }
+      #three {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        display: inline-block;
+        position: relative;
+        top: 100px;
+        left: -100px;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Heading</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea minus et
+      architecto dolorum accusantium velit dignissimos! Assumenda similique vel
+      totam quo sunt sed enim quisquam earum consequatur dolor distinctio porro
+      eos expedita repellat rem velit autem, perferendis amet deserunt quia
+      praesentium saepe natus reprehenderit? Veniam, dolorum? Et iste ab eum
+      quos placeat dolorem natus odit quisquam laudantium autem harum nobis
+      ratione, molestias nisi necessitatibus amet, eos nulla molestiae odio
+      eaque repellat sunt voluptatum. Odit sequi eius nam placeat quam, alias
+      suscipit facere nemo enim repudiandae! Modi recusandae ipsum, facere
+      blanditiis delectus beatae doloremque? Saepe blanditiis consequatur
+      pariatur alias minima ex?
+    </p>
+
+    <!-- <div class="display" id="div1">This is a div 1</div>
+    <div class="display">This is a div 2</div> -->
+    <div id="parent">
+      <div id="one"></div>
+      <div id="two"></div>
+      <div id="three"></div>
+    </div>
+  </body>
+</html>
