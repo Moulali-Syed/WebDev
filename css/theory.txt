@@ -1221,18 +1221,441 @@ clear can be applied on non floated element ,
     <div id="sidebar">Sidebar</div>
     <div id="footer">Footer</div>
 ==========================================
+2d-transforms
+transform - will not work with inline , we can change it to block /inline-block
 
+  translate
+
+     #wrapper {
+        padding: 20px;
+        margin: 20px;
+      }
+      a {
+        text-decoration: none;
+        background-color: lightcoral;
+        padding: 10px 20px;
+        color: white;
+      }
+      a:hover {
+        /* move the element 50px in x axis and 50px in y axis */
+        display: inline-block;
+        transform: translate(50px, 50px);
+        /* we can give negative x and y values also */
+        /* transform: translate(-50px, -50px); */
+      }
+
+  rotate
+       #wrapper {
+        padding: 20px;
+        margin: 20px;
+      }
+      a {
+        text-decoration: none;
+        background-color: lightcoral;
+        padding: 10px 20px;
+        color: white;
+      }
+      a:hover {
+        display: inline-block;
+        /*rotate in clockwise 20deg*/
+        transform: rotate(20deg);
+
+        /*rotate in anti-clockwise 20deg*/
+        transform: rotate(-20deg);
+      }
+  scale
+
+            a:hover {
+        display: inline-block;
+        /* multiples 2*width , 3*height */
+        transform: scale(2, 3);
+        /* if only width to be scaled */
+        /* transform: scaleX(0.8);
+        transform: scaleY(0.5); */
+      }
+
+  skew
+            a {
+        text-decoration: none;
+        background-color: lightcoral;
+        padding: 10px 20px;
+        color: white;
+
+        display: inline-block;
+        transform: skew(20deg, 10deg);
+        transform: skewX(20deg);
+        transform: skewY(10deg);
+      }
+
+  transform-origin :
+  to change origin of rotation , transform is considering
+            a {
+        text-decoration: none;
+        background-color: lightcoral;
+        padding: 10px 20px;
+        color: white;
+
+        display: inline-block;
+        transform: rotate(20deg);
+        transform-origin: 0% 100%;
+      }
+
+  matrix:
+        #wrapper {
+        padding: 20px;
+        margin: 20px;
+        background-color: yellow;
+        /* transform: matrix(
+          scaleX(),
+          skewY(),
+          skewX(),
+          scaleY(),
+          translateX(),
+          translateY()
+        ); */
+
+        transform: matrix(1, -0.5, 0, 1, 0, 0);
+      }
 ==========================================
+CSS 3D transforms:
+perspective : from how much distance we are observing an object 
+perspective-originx - along x axis
+perspective-origin y - along y axis 
 
+  transform:perspective(300px) rotate3d();
+  perspective-origin: 50% 50%;
+
+
+      <style>
+      #cover {
+        border: 2px solid red;
+        height: 200px;
+        width: 200px;
+        margin: 150px;
+      }
+      #content {
+        height: 200px;
+        width: 200px;
+        background-color: yellowgreen;
+        /* rotate along x axis */
+        transform: perspective(300px) rotate3d(50, 0, 0, 20deg);
+        /* rotate along y axis */
+        transform: perspective(300px) rotate3d(0, 50, 0, 20deg);
+        /* rotate along z axis */
+        transform: perspective(300px) rotate3d(0, 0, 50, 20deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cover">
+      <div id="content"></div>
+    </div>
+  </body>
+
+   #content {
+        height: 200px;
+        width: 200px;
+        background-color: yellowgreen;
+        transform: perspective(300px) translate3d(50px,0px,0px);
+        transform: perspective(300px) translate3d(0px,50px,0px);
+        transform: perspective(300px) translate3d(0px,0px,50px);
+        transform: perspective(300px) translate3d(50px,50px,50px);
+    }    
 ==========================================
+CSS - transitions
+changing state , like on hover changing an elements size
 
+   <style>
+      #div1 {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: 100px;
+        transition-property: width;
+        transition-duration: 1s;
+      }
+      #div1:hover {
+        /* to make smooth transition */
+        width: 200px;
+        /* we must specify , which property we want transition and in how much time transition should take */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1"></div>
+  </body>
 
+  transition-property on more than one property 
+   <style>
+      #div1 {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: 100px;
+        transition-property: width, background-color;
+        transition-duration: 1s;
+      }
+      #div1:hover {
+        /* to make smooth transition */
+        width: 200px;
+        background-color: pink;
+        /* we must specify , which property we want transition and in how much time transition should take */
+      }
+    </style>
 
+     transition-duration: 50ms; - can be in seconds and milliseconds
+
+      transition-delay: 500ms;
+
+        #div1 {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: 100px;
+        transition-property: width, background-color;
+        transition-duration: 50ms;
+        /* transition-delay: 500ms; */
+        /* to make transition fast at start , same pace , fast at end ,... we use timing function*/
+        /* transition-timing-function: linear; - default */
+        transition-timing-function: ease-in-out;
+      }
+
+      shortcut
+      #div1 {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        margin: 100px;
+        transition: width 2s, height 3s;
+
+        /* shortcut */
+        /* transition: property , duration , timing-function , delay; */
+      }
+      #div1:hover {
+        width: 200px;
+        height: 300px;
+       
+      }
 ==========================================
+CSS Animations:
 
-==========================================
+    <style>
+      /* what will happen and when it will happen defined in keyframe [about animation] */
+      @keyframes changecolor {
+        from {
+          background-color: red;
+        }
+        to {
+          background-color: yellow;
+        }
+      }
+      #animate {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        animation-name: changecolor;
+        animation-duration: 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="animate"></div>
+  </body>
 
+     @keyframes changecolor {
+        0% {
+          background-color: red;
+        }
+        100% {
+          background-color: yellow;
+        }
+      }
+
+          <style>
+      /* what will happen and when it will happen defined in keyframe [about animation] */
+      @keyframes changecolor {
+        /* these 0,25,50,75,100 % represent will divide animation-duration and apply according to their time */
+        0% {
+          background-color: red;
+        }
+        25% {
+          background-color: green;
+        }
+        50% {
+          background-color: orange;
+        }
+        75% {
+          background-color: pink;
+        }
+        100% {
+          background-color: yellow;
+        }
+      }
+      #animate {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        animation-name: changecolor;
+        animation-duration: 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="animate"></div>
+  </body>
+
+     #animate {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        animation-name: changecolor;
+        animation-duration: 2s;
+        animation-delay: 4s;
+        /* to repeat animation continuosly */
+        animation-iteration-count: 3;
+        animation-iteration-count: infinite;
+      }
+
+    <style>
+      /* what will happen and when it will happen defined in keyframe [about animation] */
+      @keyframes changecolor {
+        /* these 0,25,50,75,100 % represent will divide animation-duration and apply according to their time */
+        0% {
+          background-color: red;
+        }
+        25% {
+          background-color: green;
+        }
+        50% {
+          background-color: orange;
+        }
+        75% {
+          background-color: pink;
+        }
+        100% {
+          background-color: yellow;
+        }
+      }
+      #animate {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        animation-name: changecolor;
+        animation-duration: 2s;
+        animation-delay: 4s;
+        /* to repeat animation continuosly */
+        /* animation-iteration-count: 3; */
+        animation-iteration-count: infinite;
+      }
+      #animate2 {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        animation-name: changecolor;
+        animation-duration: 2s;
+        animation-delay: 4s;
+        /* to repeat animation continuosly */
+        /* animation-iteration-count: 3; */
+        animation-iteration-count: infinite;
+        /* animation-direction: reverse; */
+        animation-direction: alternate;
+        animation-direction: alternate-reverse;
+        /* timing function */
+        animation-timing-function: ease;
+        /* ease, ease-in , ease-out , ease-in-out,linear */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="animate"></div>
+    <hr />
+    <div id="animate2"></div>
+  </body>
+
+       /* what will happen and when it will happen defined in keyframe [about animation] */
+      @keyframes changecolor {
+        /* these 0,25,50,75,100 % represent will divide animation-duration and apply according to their time */
+        0% {
+          background-color: red;
+          border-radius: 0%;
+        }
+        10% {
+          background-color: green;
+          border-radius: 10%;
+        }
+        20% {
+          background-color: blue;
+          border-radius: 20%;
+        }
+        30% {
+          background-color: orange;
+          border-radius: 30%;
+        }
+        40% {
+          background-color: pink;
+          border-radius: 40%;
+        }
+        50% {
+          background-color: olive;
+          border-radius: 50%;
+        }
+        60% {
+          background-color: red;
+          border-radius: 40%;
+        }
+        70% {
+          background-color: magenta;
+          border-radius: 30%;
+        }
+        80% {
+          background-color: red;
+          border-radius: 20%;
+        }
+        90% {
+          background-color: khaki;
+          border-radius: 10%;
+        }
+        100% {
+          background-color: red;
+          border-radius: 0%;
+        }
+      }
+      #animate {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        animation-name: changecolor;
+        animation-duration: 2s;
+        /* animation-delay: 4s; */
+        /* to repeat animation continuosly */
+        /* animation-iteration-count: 3; */
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
 ==========================================
+Print style in CSS:
+    <style>
+      /* this will be for the visible screen on webpage */
+      @media screen {
+        p {
+          font-size: 20px;
+        }
+      }
+      /* this will be applied when we try to print */
+      @media print {
+        p {
+          font-size: 40px;
+        }
+        img {
+          display: none;
+        }
+        div {
+          width: 50%;
+        }
+      }
+    </style>
+==========================================
+Responsive Web Design:
 
 ==========================================
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* what will happen and when it will happen defined in keyframe [about animation] */
+      @keyframes changecolor {
+        /* these 0,25,50,75,100 % represent will divide animation-duration and apply according to their time */
+        0% {
+          background-color: red;
+          border-radius: 0%;
+        }
+        10% {
+          background-color: green;
+          border-radius: 10%;
+        }
+        20% {
+          background-color: blue;
+          border-radius: 20%;
+        }
+        30% {
+          background-color: orange;
+          border-radius: 30%;
+        }
+        40% {
+          background-color: pink;
+          border-radius: 40%;
+        }
+        50% {
+          background-color: olive;
+          border-radius: 50%;
+        }
+        60% {
+          background-color: red;
+          border-radius: 40%;
+        }
+        70% {
+          background-color: magenta;
+          border-radius: 30%;
+        }
+        80% {
+          background-color: red;
+          border-radius: 20%;
+        }
+        90% {
+          background-color: khaki;
+          border-radius: 10%;
+        }
+        100% {
+          background-color: red;
+          border-radius: 0%;
+        }
+      }
+      #animate {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        animation-name: changecolor;
+        animation-duration: 2s;
+        /* animation-delay: 4s; */
+        /* to repeat animation continuosly */
+        /* animation-iteration-count: 3; */
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      #animate2 {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        animation-name: changecolor;
+        animation-duration: 2s;
+        animation-delay: 4s;
+        /* to repeat animation continuosly */
+        /* animation-iteration-count: 3; */
+        animation-iteration-count: infinite;
+        /* animation-direction: reverse; */
+        animation-direction: alternate;
+        animation-direction: alternate-reverse;
+        /* timing function */
+        animation-timing-function: ease;
+        /* ease, ease-in , ease-out , ease-in-out,linear */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="animate"></div>
+    <hr />
+    <!-- <div id="animate2"></div> -->
+  </body>
+</html>
