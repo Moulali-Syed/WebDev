@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      li {
+        color: red;
+      }
+      #list2 {
+        color: pink;
+      }
+      .list5 {
+        color: yellowgreen;
+      }
+
+      a:hover {
+        color: red;
+      }
+
+      p::first-line {
+        color: red;
+      }
+
+      a[href="https://www.google.com"]
+      {
+        color: black;
+      }
+
+      * {
+        border: 1px solid red;
+      }
+
+      /* combinator selector */
+      /* anchor tag at any level inside div tag */
+      div a {
+        color: rgb(186, 226, 43);
+      }
+      /* only direct child  */
+      div > a {
+        color: aqua;
+      }
+
+      /* just after sibling - anchor tag only just after div */
+      div + a {
+        color: navy;
+      }
+
+      div ~ a {
+        color: red;
+      }
+
+      h1,
+      p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Selector</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, aut?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint dolorem
+        impedit voluptates assumenda. Saepe nemo vitae ad aliquid ut, vero optio
+        eum quam ipsa, reiciendis ullam quis hic, cumque perferendis eos
+        sapiente molestiae harum a. Quae repellat rem accusamus illum officiis
+        animi ullam amet similique. Perspiciatis dicta magnam atque sunt totam
+        deserunt nihil similique, vel itaque dolorum officia rerum neque eos
+        consequuntur ex tempore sapiente sint esse inventore! Explicabo sit sunt
+        at. Nulla obcaecati beatae facere, atque sit, commodi, vero architecto
+        ratione soluta optio sequi nisi eos earum rerum neque nemo corporis
+        omnis tempore quae reiciendis! Iste optio officia eaque.
+      </p>
+      <ul>
+        <li>list 1</li>
+        <li id="list2">list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+        <li class="list5">
+          list 5 <a href="https://www.google.com">Google</a>
+        </li>
+        <li class="list5">list 6</li>
+        <li>list 7 <a href="">Yahoo</a></li>
+        <li>list 8</li>
+      </ul>
+      <a href="">Yahoo</a>
+    </div>
+
+    <a href="">outside link</a>
+  </body>
+</html>

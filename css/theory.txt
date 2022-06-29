@@ -1657,13 +1657,199 @@ Print style in CSS:
 ==========================================
 Responsive Web Design:
 
+To make website responsive we must specify 
+meta tag
+media queries
+make images and videos responsive
+
+we must specify the 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ meta tag to make page responsive
+
+
+ media queries:
+ we have online websites which shows the browser screensize ,thus we can know at which browser size website is breaking the style
+ then we can apply media queries
+
+     <style>
+      #div1 {
+        width: 70%;
+        float: left;
+        background-color: lawngreen;
+      }
+      #div2 {
+        width: 30%;
+        float: left;
+        background-color: rosybrown;
+      }
+      h1 {
+        font-size: 80px;
+      }
+      /* max-width :768 means , the screen size below 768px will have the styles applied inside this media query */
+      @media screen and (max-width: 768px) {
+        #div1 {
+          width: 50%;
+        }
+        #div2 {
+          width: 50%;
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        #div1 {
+          width: 100%;
+        }
+        #div2 {
+          width: 100%;
+          color: white;
+          background: black;
+        }
+      }
+      /* screen size above 400px , will get the styles applied when we specify min-width */
+      @media screen and (min-width: 400px) {
+        #div1 {
+          width: 100%;
+        }
+        #div2 {
+          width: 100%;
+          color: white;
+          background: black;
+        }
+      }
+
+      @media screen and (min-width: 400px) and (max-width: 768px) {
+        #div1 {
+          width: 100%;
+        }
+        #div2 {
+          width: 100%;
+          color: white;
+          background: black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <h1>Div1</h1>
+    </div>
+    <div id="div2">
+      <h1>Div2</h1>
+    </div>
+  </body>
+
+
+  To make images , videos responsive: 
+         img {
+        width: 100%;
+        height: auto;
+      }
+      video {
+        width: 100%;
+        height: auto;
+      }
+
 ==========================================
+Advanced selectors:
 
+1.type selector
+  h1{
+    color:red;
+  }
+2.id selector - must be unique
+  #idName{
+    color:red;
+  }
+3.class selector - can have same class on multiple elements
+  .className{
+    color:red;
+  }
+4.pseudo class and psuedo element 
+  a:hover{
+    color:red;
+  }
+  p::first-line{
+    color:red;
+  }
+5.attribute selector - mostly used in form 
+  a[href="https://example.com"]{
+    color:red;
+  }
+6.universal selector 
+  *{
+    color:red;
+  }
+7.combinator selector 
+  descendant selector (child at any stage)
+  any span , inside .red-p class , no need of being direct child
+  .red-p span{
+    color:green;
+  }
+
+  child combinatory(direct child)
+  .red-p>span{
+    color:red;
+  }
+
+  adjacent combinatory(right after sibling)
+  .red-p+h1{
+    color:green;
+  }
+
+  general sibling combinatory(all sibling)
+  .red-p~h1{
+    color:green;
+  }
+
+  general sibling combinatory(right after sibling)
+  .red-p,h1{
+    color:green;
+  }
+
+  refer index20.html file 
+==========================================
+Specificity:
+It is which css property will get applied  
+more specific rule will get more value 
+
+!important will override everything
+inline can override everything except !important
+external will work according to Specificity
+
+Specificity
+# - id selector has highest value
+* - has lowest value
+
+Specificity rule trick 
+10000 points to !important
+1000 to inline
+100 to id
+10 to class , attribute , pseudo-class
+1 for element selector and pseudo-elements
+0 to universal selector
+
+if same rule written two or more times in external sheet then last rule will be applicable 
 
 
 ==========================================
+Multiple columns:
 
-==========================================
+      div {
+        column-count: 3;
+        column-gap: 50px;
+        column-rule-style: solid;
+        column-rule-width: 1px;
+        column-rule-color: red;
+
+        /* shortcut */
+        column-rule: 1px soild red;
+        column-width: 300px;
+      }
+      h1 {
+        column-span: all;
+      }
+  
+index21.html file  
 
 ==========================================
 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 70%;
+        float: left;
+        background-color: lawngreen;
+      }
+      #div2 {
+        width: 30%;
+        float: left;
+        background-color: rosybrown;
+      }
+      h1 {
+        font-size: 80px;
+      }
+      /* max-width :768 means , the screen size below 768px will have the styles applied inside this media query */
+      @media screen and (max-width: 768px) {
+        #div1 {
+          width: 50%;
+        }
+        #div2 {
+          width: 50%;
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        #div1 {
+          width: 100%;
+        }
+        #div2 {
+          width: 100%;
+          color: white;
+          background: black;
+        }
+      }
+      /* screen size above 400px , will get the styles applied when we specify min-width */
+      @media screen and (min-width: 400px) {
+        #div1 {
+          width: 100%;
+        }
+        #div2 {
+          width: 100%;
+          color: white;
+          background: black;
+        }
+      }
+
+      @media screen and (min-width: 400px) and (max-width: 768px) {
+        #div1 {
+          width: 100%;
+        }
+        #div2 {
+          width: 100%;
+          color: white;
+          background: black;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+      video {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <h1>Div1</h1>
+    </div>
+    <div id="div2">
+      <h1>Div2</h1>
+    </div>
+  </body>
+</html>
