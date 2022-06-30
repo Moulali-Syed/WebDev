@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex-container {
+        background-color: indianred;
+        display: flex;
+        height: 400px;
+        /*
+        flex-direction: row;
+        flex-direction: row-reverse;
+        flex-direction: column;
+        flex-direction: column-reverse;
+*/
+        /* flex-wrap: nowrap; */
+
+        /* flex-wrap: wrap;
+        flex-wrap: wrap-reverse; */
+
+        /* flex-flow: row wrap; */
+        /* justify-content: center;
+        justify-content: flex-start;
+        justify-content: flex-end; */
+        /* same space on both sides of elements */
+        /* justify-content: space-around; */
+
+        /* space will be adjusted in between elements */
+        /* justify-content: space-between; */
+        /* space will be distributed evenly between elements and webpage margin */
+        /* justify-content: space-evenly; */
+
+        /* height: 400px; */
+        /* by default align-items: stretch , strecthes upto container height */
+        /* align-items: stretch; */
+        /* justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; */
+        /* to make vertically center */
+        /* align-items: center; */
+
+        /* to be at top */
+        /* align-items: flex-start; */
+        /* to be at bottom */
+        /* align-items: flex-end; */
+
+        /* align-content is opposite to justify-content , behaves opposite i.e vertically */
+        /* default is stretch */
+        /* align-content: stretch;
+        align-content: space-between;
+        align-content: flex-start;
+        align-content: flex-end; */
+      }
+      .flex-child {
+        background-color: rgb(222, 178, 133);
+        margin: 20px;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        /* display: inline-block; */
+      }
+      #one {
+        align-self: flex-end;
+      }
+      #two {
+        align-self: center;
+      }
+      #three {
+        align-self: flex-start;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-child" id="one">div-1</div>
+      <div class="flex-child" id="two">div-2</div>
+      <div class="flex-child" id="three">div-3</div>
+      <!-- <div class="flex-child">div-4</div>
+      <div class="flex-child">div-1</div>
+      <div class="flex-child">div-2</div> -->
+      <!-- <div class="flex-child">div-3</div>
+      <div class="flex-child">div-8</div> -->
+    </div>
+  </body>
+</html>

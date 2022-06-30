@@ -1852,38 +1852,215 @@ Multiple columns:
 index21.html file  
 
 ==========================================
+CSS Flexbox:
 
+    <div class="flex-container">
+      <div class="flex-child">div-1</div>
+      <div class="flex-child">div-2</div>
+      <div class="flex-child">div-3</div>
+      <div class="flex-child">div-4</div>
+    </div>
+
+display:flex
+    when we apply display:flex on parent container , then all the child elements inside it will behave as inline-block and 
+    display side by side 
+To change the direction of the flex elements
+    flex-direction: row [is default]
+    flex-direction: row-reverse
+    flex-direction: column
+    flex-direction: cloumn-reverse
+
+to move elements to next row we use flex-wrap , to control whether to go to next row or not 
+    flex-wrap:nowrap; //this will adjust its size instead of going to new line 
+    flex-wrap:wrap; //goes to new line when the size of elements is bigger than the current line size 
+    flex-wrap: wrap-reverse; // this will move in reverse direction 
+
+combination of direction and wrap - flex-flow
+    flex-flow: row wrap;
+
+to make flex elements center horizontally 
+    justify-content: center;
+also we can move elements to start and end
+        justify-content: flex-start;
+        justify-content: flex-end;
+
+        /* same space on both sides of elements */
+        justify-content: space-around;
+
+        /* space will be adjusted in between elements */
+        justify-content: space-between;
+        /* space will be distributed evenly between elements and webpage margin */
+        justify-content: space-evenly;
+
+
+if we give height to container , flex items will become equal to that height
+
+to make flex elements vertically center 
+      align-items: center;
+
+        /* by default align-items: stretch , strecthes upto container height */
+        align-items: stretch;
+
+        /* to make vertically center */
+        align-items: center;
+
+        /* to be at top */
+        align-items: flex-start;
+        /* to be at bottom */
+        align-items: flex-end;
+
+
+align-content
+        /* align-content is opposite to justify-content , behaves opposite i.e vertically */
+        /* default is stretch */
+        align-content: stretch;
+        align-content: space-between;
+        align-content: flex-start;
+        align-content: flex-end;
+
+
+to make element center horizontally and vertically
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+properties on flex elements
+
+order
+      #one {
+        order: 2;
+      }
+      #two {
+        order: -1;
+      }
+      #three {
+        order: -10;
+      }
+
+flex-grow:
+      when we specify flex-grow as 1 , if there is any empty space in row flex elements will occupy the space eqaully
+      #one {
+        flex-grow: 1;
+      }
+      #two {
+        flex-grow: 1;
+      }
+      #three {
+        flex-grow: 1;
+      }
+
+in flex-grow we specify in which ratio , they will divide space
+        #one {
+        flex-grow: 1;
+      }
+      #two {
+        flex-grow: 2;
+      }
+      #three {
+        flex-grow: 3;
+      }
+
+flex-shrink:
+if there is no space in a row and we have not specified flex-wrap , then if we specify flex-shrink it will specify
+which element to be shrinked more
+the ratio in which an element should shrink 
+
+ #one {
+        flex-shrink: 3;
+      }
+      #two {
+        flex-shrink: 2;
+      }
+
+flex-basis:
+   #one {
+        /* tells what to be the initial width */
+        flex-basis: 300px;
+      }
+
+align-self:
+
+      #one {
+        align-self: flex-end;
+      }
+      #two {
+        align-self: center;
+      }
+      #three {
+        align-self: flex-start;
+      }
+==========================================
+CSS Layout: 
+CSS grid is the new layout model in css 
+from oct 2017 all major browsers started supporting css grid 
+
+Both Flexbox and css grid has its own importance and should be used for designing a web page
+grid works for 2 dimensional alignment
+Flexbox works on one dimensional , good for space distribution
+
+
+grid columns: the vertical lines of grid items are called columns 
+grid rows : the horizontal lines of grid items are called rows 
+grid gap: the spaces between each column / row are called gaps 
+grid lines : the lines between columns are called column lines , the lines between rows are called row lines 
+
+
+        /* grid elements will be displayed one after other vertically */
+        display: grid;
+        /* grid elements will be displayed one after other but will depend on width on the content of grid element */
+        display: inline-grid;
+
+
+         /* to specify number of columns to be divided */
+        grid-template-columns: 200px 400px;
+        /* to display columns of same width */
+        grid-template-columns: auto auto auto;
+
+        /* we can specify in percentage also */
+        grid-template-columns: auto 50% auto;
+        grid-template-columns: auto 50% auto 50px;
+
+
+               /* to give gap */
+        grid-column-gap: 30px;
+        /* grid-column-gap: is now column-gap  */
+        grid-row-gap: 20px;
+        /* grid-row-gap is now row gap */
+
+        /* horizontal alignment */
+        /* start is default */
+        justify-content: start;
+        justify-content: end;
+        justify-content: center;
+        justify-content: space-between;
+        justify-content: space-around;
+        justify-content: space-evenly;
+
+        /* vertical alignment */
+        align-content: start;
+        align-content: end;
+        align-content: center;
+        align-content: space-around;
+        align-content: space-between;
+        align-content: space-evenly;
+
+
+        grid element properties:
+
+              /* grid properties on grid elements */
+      #grid-1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        /* shortcut */
+        grid-column: 1/3;
+
+        grid-column: 1 / span 2;
+      }
 ==========================================
 
 
-
-==========================================
-
-==========================================
-
-==========================================
-
-==========================================
-
-
-
-==========================================
-
-==========================================
-
-==========================================
-
-==========================================
-
-
-
-==========================================
-
-==========================================
-
-==========================================
-
-==========================================
 
 
 
