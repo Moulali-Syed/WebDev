@@ -1,0 +1,36 @@
+styling based on html tag:
+=========================
+
+h1{
+
+	text-align:center;
+	color:blue;
+	font-size:32px;
+}
+
+h1- selector
+
+font-size -  property
+32px - value
+
+
+3 ways of styling:
+=================
+Inline style
+	<h1 style="color:blue">Hello</h1>
+
+	never preferable
+
+Internal CSS
+	in head tag write style tag
+	<style>
+		h1{
+			color:blue;
+		}
+	</style>
+
+External CSS
+	create style.css file and link it to html file
+	and write css in the style.css
+
+	 <link rel="stylesheet" href="style.css" />
