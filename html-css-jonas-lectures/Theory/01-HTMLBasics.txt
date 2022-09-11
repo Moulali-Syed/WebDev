@@ -90,3 +90,6 @@ Extensions: Image preview
 	       color highlighter
 		  Auto rename tag
 		  live server
+
+
+for line break: use <br/> tag
