@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <header id="main-header">
       <h1 style="color: blue">📘 The Code Magazine</h1>
 
       <nav>
@@ -29,7 +29,9 @@
       <header>
         <h2>The Basic Language of the Web: HTML</h2>
         <img src="./img/laura-jones.jpg" alt="author" width="50" height="50" />
-        <p>Posted by <strong>Laura Jones </strong> on Monday, June 21st 2027</p>
+        <p id="author">
+          Posted by <strong>Laura Jones </strong> on Monday, June 21st 2027
+        </p>
 
         <img
           src="./img/post-img.jpg"
@@ -97,27 +99,27 @@
 
     <aside>
       <h4>Related Posts</h4>
-      <ul>
+      <ul class="related-posts">
         <li>
           <img src="./img/related-1.jpg" alt="img1" width="75" />
           <a href="#">How to learn WebDevelopment</a>
-          <p>By Jonas Schdemataan</p>
+          <p class="related-author">By Jonas Schdemataan</p>
         </li>
         <li>
           <img src="./img/related-2.jpg" alt="img2" width="75" />
           <a href="#">The unknown power of css</a>
-          <p>By Jim</p>
+          <p class="related-author">By Jim</p>
         </li>
         <li>
           <img src="./img/related-3.jpg" alt="img3" width="75" />
           <a href="#">Why JavaScript is awesome</a>
-          <p>By Matilda</p>
+          <p class="related-author">By Matilda</p>
         </li>
       </ul>
     </aside>
 
     <footer>
-      <p>Copyright &copy; 2027 by code magazine</p>
+      <p id="copyright">Copyright &copy; 2027 by code magazine</p>
       <a href="#">GoTop</a>
       <a href="#demo">gotoDemo</a>
     </footer>
