@@ -121,3 +121,21 @@ a:active {
   font-style: italic;
 }
 /* LVHA */
+
+/* resolving conflicts
+ */
+#copyright {
+  color: red;
+}
+
+.copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+}
+
+footer p {
+  color: green;
+}

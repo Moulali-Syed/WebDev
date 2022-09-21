@@ -235,5 +235,30 @@ a:active {
 }
 /* LVHA */
 
+Conflicts between Selectors:
+=============================
+Declarations marked !important > Inline selector > ID Selector(#) > class (.) or pseudo class selector(:) > element selector (p,div,li..) > universal selector (*)
+if multiple last selector in code applies 
+
+Inheritance and universal selector:
+==================================
+some properties get inherited from parent to child elements
+body properties will get inherited to child
+But not every property is inherited and also can be overwritten 
+Not all properties get inherited , mostly ones related to text font-family, font-size , font-weight
+font-style , line-height , letter-spacing , text-align , text-transform , text-shadow , list-style,..etc
+
+border property doesnot get inherited
+
+universal selector selects every element
+*{
+
+}
+
+universal selector properties doesnot get inherited , but properties of body get inherited
+
+See challange in section 3 and analyze it for properties used in css 
+
+
 
 
