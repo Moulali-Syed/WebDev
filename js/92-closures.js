@@ -6,8 +6,22 @@ function myFunc() {
 }
 
 const ans = myFunc();
-console.log(ans);
+console.log(ans); //1
 
+// ****************
+//function can return function
+function myFunc() {
+  return 'apple';
+}
+
+const anss = myFunc();
+console.log(anss); //"apple"
+
+//similarly we can make the function to return a string , object, array
+
+//******************************************* */
+
+//outer function returning a function
 function outerFunc() {
   function innerFunc() {
     console.log('hello world');
@@ -15,7 +29,11 @@ function outerFunc() {
   return innerFunc;
 }
 const ans1 = outerFunc();
-console.log(ans1);
+console.log(ans1); //prints function
+//we can also call ans1
+ans1(); //returns hello world
+
+// *************************************************
 
 function printFullName(fName, lName) {
   function printName() {
