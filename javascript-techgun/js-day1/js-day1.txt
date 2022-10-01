@@ -1,0 +1,104 @@
+javascript and java are not same
+
+Why js born?
+To create interactive websites
+ - client side validation
+ - popup
+ - event on click
+ - and many more
+ to make our website dynamic we use javascript
+
+javascript is used all websites
+
+Where is javascript now?
+Website client side (Js,Jquery,ReactJs , Angualr js)
+Server side - node js
+mobile development - react native
+software development - electron js [vscode made of javascript using electronjs]
+
+
+What is ES6 , ES7 ,.....?
+ES6- ECMASCRIPT 6 is an edition , ES6 and ES2015 are same 
+
+ES1 - 1997
+ES2 - 1998
+ES3 - 1999
+ES4 - abandoned
+ES5 - 2009
+ES6 - 2015 [Major Change]
+ES7 - 2016
+.
+.
+.
+ES11 - 2020
+.
+.
+
+
+What is ECMASCRIPT?
+ECMA is an organisation that make standards for technologies
+The specification defined in ECMA-262 for creating general purpose scripting language
+ECMASCRIPT specification helps to create a language
+javascript documentation helps to understand javascript
+
+Each browser creates its own javascript compiler based on the ECMA standards 
+javascript is backward compatiable
+
+chrome has v8 engine ,spider monkey - firefox , chakra - edge
+
+
+Compatibility check:
+check in the website - https://caniuse.com/
+
+===============================================================================================
+javascript HelloWorld:
+
+software needed
+We need browser [chrome], a text editor [vs code is recommended]
+
+We can create a .js file to write javascript code 
+
+We can have multiple javascript files in a website
+
+We can write javascript code in chrome console 
+
+We can write javascript  code inside html file
+
+ <body>
+    <h1>JS Tutorial</h1>
+
+    <script>
+      alert('Hello World');
+    </script>
+  </body>
+
+
+  we can write script tag inside body or head or in both , also we can have any number of script tags
+
+
+  We can js code in a .js file and link it to html file
+  code in script.js
+
+  alert('Hello World');
+
+  linking script.js to html file
+    <body>
+    <h1>JS Tutorial</h1>
+    <script src="../js-day1/js/script.js"></script>
+  </body>
+
+  We can have multiple script tags in the body and head
+
+===============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+===============================================================================================
