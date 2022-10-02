@@ -302,3 +302,28 @@ switch (input) {
 
 we must use break; in switch statment , else it will execute all the remaining statments from whereever it it true
 ==================================================================
+
+loops:
+
+while loop
+
+let counter = 1;
+while (counter <= 10) {
+  document.write('Hello');
+  counter++;
+}
+
+
+for loop
+let sum = 0;
+for (let h = 1; h <= 100; h++) {
+  sum += h;
+}
+console.log(sum);
+
+
+let num1 = 1;
+do {
+  console.log(num1);
+  num1++;
+} while (num1 <= 5);

@@ -58,6 +58,7 @@ if (age >= 12) {
   console.log('u can not vote');
 }
 
+/*
 //if we have only one statment we can ignore curly brace
 if (age > 10) console.log('hi');
 
@@ -109,3 +110,21 @@ switch (input) {
   default:
     document.write('Wrong Input......');
 }
+
+// let counter = 1;
+// while (counter <= 10) {
+//   document.write('Hello');
+//   counter++;
+// }
+*/
+let sum = 0;
+for (let h = 1; h <= 100; h++) {
+  sum += h;
+}
+console.log(sum);
+
+let num1 = 1;
+do {
+  console.log(num1);
+  num1++;
+} while (num1 <= 5);
