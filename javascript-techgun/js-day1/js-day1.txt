@@ -89,6 +89,32 @@ We can write javascript  code inside html file
 
   We can have multiple script tags in the body and head
 
+  If we want the js file to be executed before the html file , place it in head tag , else place it body tag
+  If we use external javascript file , if once the website is loaded the js file will be cached and for further
+  loading of website it will be faster
+
+   <script async src="../js-day1/js/script.js"></script>  //download and execute where ever found[default]
+   async in script tag , it is default , though we mention or not , when it encounters this line it will execute the js file [default]
+
+    <script defer src="../js-day1/js/script.js"></script> //download and execute after loading complete html
+    defer - this when used it will download js file after reading the complete html file
+
+
+    We can write into html file
+    document.getElementById('h').innerHTML = 'Moulali';
+
+     <h2 id="h"></h2>
+
+     We can also write using below - but the script should not be defer
+     document.write('Hello From Write');
+     document.write doesnot work with defer in script tag
+     document.write works based on the position of the script tag placed in the html file 
+
+To write in console:
+console.log('Hello Wolrd');
+
+********************************************************************************************
+******** To write multiple lines of code inside the chrome console press shift+Enter *******
 ===============================================================================================
 
 
