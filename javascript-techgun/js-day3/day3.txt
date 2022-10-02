@@ -52,27 +52,293 @@ functions to interact with user - alert , confirm , prompt
 Note: All these pass script execution and dont allow the visitor to interact with the rest of the page until window has been dismissed
 
 
+alert('hello world');
 
 
+
+let age = prompt('Enter your age');
+
+if (age != null && age != '') {
+  document.write(`your age is ${age}`);
+} else {
+  document.write('age field is blank');
+}
+
+//if we want some default input to be shown in the input field
+let age1 = prompt('Enter your age', 20);
+
+if (age1 != null) {
+  document.write(`your age is ${age1}`);
+} else {
+  document.write('age1 field is blank');
+}
+
+
+let response = confirm('Are you sure you want to delete?');
+
+if (response) {
+  document.write('deleted');
+} else {
+  document.write('Not deleted');
+}
+
+==================================================================================================
+type conversion in javascript:
+
+
+let type = 'hello';
+alert(typeof type); //string
+
+let type1 = 12;
+alert(typeof type1); //number
+
+let type2 = true;
+alert(typeof type2); //boolean
+
+//generally we get string as input in javascript
+
+//type conversion
+let type3 = 5 + null;
+console.log(type3); //5
+alert(typeof type3); //number
+
+let type4 = '5' + null;
+console.log(type4); //string
+alert(typeof type4); //5null
+
+let type5 = '5' + 2;
+console.log(type5); //52
+alert(typeof type5); //string
+
+let type6 = '5' - 2;
+console.log(type6); //3
+alert(typeof type6); //number
+
+let type7 = '5' * '2';
+console.log(type7); //10
+alert(typeof type7); //number
+
+//only confusion is with + , with other operators it can figure out to convert to number or display NaN
+
+let type8 = '5' * 'yes';
+console.log(type8);//NaN
+alert(typeof type8);//number
+
+
+
+/*
+1.String()
+2.Number()
+3.Boolean()
+*/
+
+let n1 = 4;
+console.log(typeof n1); //number
+let n2 = String(n1);
+console.log(typeof n2); //string
+
+let s1 = '32';
+console.log(typeof s1); //string
+let s2 = Number(s1);
+console.log(typeof s2); //number
+
+let s3 = 'hello';
+console.log(typeof s3); //string
+let s4 = Number(s3);
+console.log(s4); //NaN
+console.log(typeof s4); //number
+
+console.log('=============');
+let b1 = true;
+console.log(typeof b1); //boolean
+let b2 = Number(b1);
+console.log(b2); //1
+console.log(typeof b2); //number
+
+let b3 = false;
+console.log(typeof b3); //boolean
+let b4 = Number(b3);
+console.log(b4); //0
+console.log(typeof b4); //number
+
+console.log('============');
+let num1 = 32;
+console.log(typeof num1); //number
+let num2 = Boolean(num1);
+console.log(num2); //true
+console.log(typeof num2); //boolean
+
+let num3 = 0;
+console.log(typeof num3); //number
+let num4 = Boolean(num3);
+console.log(num4); //false
+console.log(typeof num4); //boolean
+
+console.log('----------');
+let st1 = '';
+let st2 = Boolean(st1);
+console.log(typeof st2 + ' ' + st2); //boolean false
+
+let st3 = 'apple';
+let st4 = Boolean(st3);
+console.log(typeof st4 + ' ' + st4); //boolean true
 
 
 ==================================================================================================
+String manipulation:
+
+1.
+let str = 'Moulali';
+//template literal
+let greet = `Hello ${str}`;
+console.log(greet);
+
+2.
+//New line character
+let str = 'Moulali \n Syed';
+console.log(str);
+/*
+Moulali 
+ Syed
+*/
+
+//tab space
+
+let str2 = 'Moulali\tSyed';
+console.log(str2);
+
+3.
+//use backslash to ignore
+let str = 'Moulali\\Syed';
+console.log(str);
+
+let str2 = 'Moulali "Syed';
+
+4.
+//to know length of string
+let str = 'Moulali';
+console.log(str.length); //7
+
+//index starts from 0
+console.log(str[3]); //l
+
+5.
+//concatenate string
+let str1 = 'Moulali';
+let str2 = 'Syed';
+console.log(str1 + ' ' + str2);
+
+6.
+//string comparision - js is case sensitive
+let str = 'Moulali';
+if ('Moulali' == str) {
+  console.log('Equal');
+} else {
+  console.log('Not equal');
+}
 
 
+7.
+//concat operator
+let str = 'apple';
+let st2 = 'fruit';
+let st3 = str.concat(st2);
+console.log(st3);
+let st4 = str.concat(" ", st2);
+console.log(st4);
+
+8.
+
+//substring
+let str = 'This is javascript tutorial. It is a good tutorial';
+let substr = str.substr(8, 19); //8 is start character ,  19 is the length of string from 8th charcater
+console.log(substr); //javascript tutorial
+
+//substring
+let st1 = 'This is javascript tutorial. It is a good tutorial';
+let substring = st1.substring(8, 18);// 8 is start charcater , 18 is the end charcater index value
+console.log(substring);//javascript
+
+9.
+//to know from where a character or word is
+let str = 'This is javascript tutorial. It is a good tutorial';
+let position = str.indexOf('good');
+console.log(position); //37
+
+//if 2 are there then it will return first match
+
+let pos = str.indexOf('is', 10); //check 'is' from 10th index position
+console.log(pos);
+
+let pos2 = str.lastIndexOf('is'); //checks from back
+console.log(pos);
+
+let pos3 = str.lastIndexOf('z');
+console.log(pos3); //-1 which means it is not present in the string
+let pos4 = str.indexOf('x');
+console.log(pos4); //-1
+
+10.
+//trim -  remove spaces from front and back
+let str = '     This is javascript tutorial. It is a good tutorial    ';
+
+console.log(str.trim());
+console.log(str);
+
+//to remove space from start
+console.log(str.trimStart());
+//remove space from end
+console.log(str.trimEnd());
 
 
+11.
+//upper case and lowercase
+let str = 'This is javascript tutorial. It is a good tutorial';
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
 
+12.
+//replace
+let str = 'This is javascript tutorial. It is a good tutorial';
+let newStr = str.replace('good', 'best');
+console.log(str);
+console.log(newStr);
+// This is javascript tutorial. It is a good tutorial
+// This is javascript tutorial. It is a best tutorial
+
+13.
+let str = 'This is javascript tutorial. It is a good tutorial';
+let str1 = str.includes('html');
+console.log(str1); //false
+
+let str2 = str.includes('javascript');
+console.log(str2);//true
+
+==================================================================================================
+Array:
+let book1 = 'Math';
+let book2 = 'Physics';
+let book3 = 'Chemistry';
+let book4 = 'Javascript';
+
+console.log(book3);
+
+//array - we can store all variables in one
+let books = ['Math', 'physics', 'chemistry', 'javascript']; //2 ways to declare array
+console.log(books); //[ 'Math', 'physics', 'chemistry', 'javascript' ]
+
+let books1 = new Array('Math', 'phsics', 'chemistry', 'javascript');
+
+//access using the index - starts from 0
+console.log(books[1]); //physics
+
+let asset = [1, 3, 40, 100.1, 'math'];
+console.log(asset[3]); // 100.1
+
+//change an element in array
+asset[2] = 'hi';
+console.log(asset); //[ 1, 3, 'hi', 100.1, 'math' ]
 
 ==================================================================================================
 
-
-
-
-
-==================================================================================================
-
-
-
-
-
-==================================================================================================
+operations on array:
