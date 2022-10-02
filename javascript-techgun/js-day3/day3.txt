@@ -342,3 +342,347 @@ console.log(asset); //[ 1, 3, 'hi', 100.1, 'math' ]
 ==================================================================================================
 
 operations on array:
+1.
+//find length of array
+let book = ['Maths', 'Physics', 'Chemistry', 'Bio'];
+console.log(book.length); //4
+
+2.
+//add element at the end of array - use push
+let book = ['Maths', 'Physics', 'Chemistry', 'Bio'];
+book.push('Hindi');
+console.log(book);//[ 'Maths', 'Physics', 'Chemistry', 'Bio', 'Hindi' ]
+
+3.
+//add element at the first of array - use unshift
+let book = ['Maths', 'Physics', 'Chemistry', 'Bio'];
+book.unshift('Hindi');
+console.log(book);//[ 'Hindi', 'Maths', 'Physics', 'Chemistry', 'Bio' ]
+
+4.
+//remove element at the last of array - use pop
+let book = ['Maths', 'Physics', 'Chemistry', 'Bio'];
+book.pop();
+console.log(book); //[ 'Maths', 'Physics', 'Chemistry' ]
+
+5.
+//remove element at the specified index - use splice
+let book = ['Maths', 'Physics', 'Chemistry', 'Bio'];
+book.splice(1, 1); //[1 - is index position , 1 - is count of elements]
+console.log(book); //[ 'Maths', 'Chemistry', 'Bio' ]
+
+6.
+//empty an array
+let book = ['Maths', 'Physics', 'Chemistry', 'Bio'];
+book = []; //method1
+book.length = 0; //method2
+console.log(book); //[]
+
+7.
+//know index position of element
+let book = ['Maths', 'Physics', 'Chemistry', 'Bio'];
+let position = book.indexOf('Bio');
+console.log(position); //3
+
+8.
+//check if given variable is array
+let book = ['Maths', 'Physics', 'Chemistry', 'Bio'];
+let book1 = 'Math';
+console.log(Array.isArray(book1)); //false
+console.log(Array.isArray(book));//true
+
+9.
+//using split to convert text to array elements
+let text = 'This is a random text';
+let wordarray = text.split(' ');
+console.log(wordarray); //[ 'This', 'is', 'a', 'random', 'text' ]
+
+let warr = text.split('s');
+console.log(warr); //[ 'Thi', ' i', ' a random text' ]
+
+10.
+//join array elements
+let book = ['math', 'phsics', 'bio', 'computer science'];
+let warr = book.join(' ');
+console.log(warr); //math phsics bio computer science
+
+11.
+//join multiple array
+let book = ['math', 'phsics', 'bio', 'computer science'];
+let book2 = ['hindi', 'english', 'french'];
+let newBook = book.concat(book2);
+console.log(newBook);
+/*
+[
+  'math',
+  'phsics',
+  'bio',
+  'computer science',
+  'hindi',
+  'english',
+  'french'
+]
+*/
+
+12.
+//multi dimensional array
+let book = ['math', 'phsics', 'bio', 'computer science'];
+let bookWithPages = [
+  ['Math', '300'],
+  ['physics', 321],
+  ['bio', '356'],
+];
+
+console.log(bookWithPages[0][1]); //300
+console.log(bookWithPages[2][0]); //bio
+console.log(bookWithPages[1]); //[physics,321]
+
+13.
+
+//iterate array using for
+let book = ['math', 'phsics', 'bio', 'computer science'];
+for (let count = 0; count < book.length; count++) {
+  console.log(book[count]);
+}
+/*
+math
+phsics
+bio
+computer science
+*/
+
+14.
+//iterate array using forEach
+let book = ['math', 'phsics', 'bio', 'computer science'];
+book.forEach(myfun);
+
+function myfun(value) {
+  console.log(value);
+}
+/*
+math
+phsics
+bio
+computer science
+*/
+
+book.forEach((val) => console.log(val));
+/*
+math
+phsics
+bio
+computer science
+*/
+
+
+========================================================================================
+functions in javascript:
+/*
+we have user defind and predfined functions
+
+predefined like alert();
+*/
+
+function mulTab(num) {
+  for (let i = 1; i <= 10; i++) {
+    console.log(`${num}*${i} = ${num * i}`);
+  }
+}
+
+mulTab(2);
+
+/*
+2*1 = 2
+2*2 = 4
+2*3 = 6
+2*4 = 8
+2*5 = 10
+2*6 = 12
+2*7 = 14
+2*8 = 16
+2*9 = 18
+2*10 = 20
+*/
+========================================================================================
+parameters and arguments in javascript:
+
+function mulTab(num) {
+  for (let i = 1; i <= 10; i++) {
+    console.log(`${num}*${i} = ${num * i}`);
+  }
+}
+
+mulTab(2);
+
+num - is parameter
+2 - is argument 
+
+
+function add(num1, num2) {
+  console.log(num1 + num2);
+}
+
+add(2, 3); //5
+
+num1,num2 are parameters
+2,3 are arguments 
+
+========================================================================================
+
+//arguments object - we have arguments inside a function by default ,we can pass any number of arguments
+function add() {
+  console.log(arguments);
+  console.log(arguments.length);
+}
+
+add(5, 7);
+
+/*
+[Arguments] { '0': 5, '1': 7 }
+2
+*/
+
+
+
+function add() {
+  console.log(arguments[1]);
+  console.log(arguments[3]);
+}
+
+add(5, 7, 8);
+
+/*
+7
+undefined
+*/
+
+function add() {
+  if (arguments.length == 0) {
+    console.log('No arguments passed!');
+  } else {
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++) {
+      sum += arguments[i];
+    }
+    console.log(sum);
+  }
+}
+
+add(5, 7, 8);
+
+/*
+20
+*/
+
+
+========================================================================================
+function add() {
+  if (arguments.length == 0) {
+    console.log('No parameters passed!');
+  } else {
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++) {
+      sum += arguments[i];
+    }
+    console.log(sum);
+  }
+}
+
+//now we are storing function inside a variable ,now we can call function using variable name also
+let addition = add;
+addition(5, 3);
+/*
+8
+*/
+
+
+========================================================================================
+//return a value in javascript
+
+function add(a, b) {
+  return a + b;
+}
+
+let sum = add(2, 3);
+console.log(sum);
+//5
+
+//if we are returning any value from function , by default it returns undefined
+
+
+function add(a, b) {
+  let d = [2, 3, 4];
+  return d;
+}
+
+let c = add(2, 3);
+console.log(c);
+//[ 2, 3, 4 ]
+
+
+function compare(a, b) {
+  if (a > b) {
+    return 1;
+  } else if (b > a) {
+    return -1;
+  } else {
+    return 0;
+  }
+}
+let res = compare(5, 6);
+console.log(res);
+========================================================================================
+//global vs local variable
+let car = 'audi'; //global varibale
+function add() {
+  let res = 33; //local variable
+  console.log(res);
+}
+add();
+//local variable can used inside the function in which it is defined , if tried accessing outside gives error as it is not defined
+//global variable can be used inside function and outside
+//variable  inside a function is local varibale,variable outside a function is global variable
+
+
+========================================================================================
+anonymous function:
+function without a name 
+
+//function expression - assigning a function to a variable
+let show = function () {
+  console.log('hello');
+};
+show();
+
+function show() {
+  console.log('hello world');
+}
+setTimeout(show, 3000); //executes show function after 3 seconds
+
+//for suppose i want to use function only once
+setTimeout(function () {
+  console.log('hello!!');
+}, 3000);
+========================================================================================
+//Immediately Invoked function - IIFE
+//we want a function to get executed as we write
+let fun = function () {
+  console.log('helo');
+  //   alert('hello');
+};
+fun();
+
+(function () {
+  console.log('hello from IIFE');
+})();
+
+
+========================================================================================
+
+
+
+========================================================================================
+
+
+
+========================================================================================
