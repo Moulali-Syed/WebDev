@@ -690,15 +690,90 @@ function fun() {
     <script src="./script1.js"></script>
   </body>
   =================================================
+KeyBoard events:
+
+keyDown event
+
+
+window.addEventListener('keydown', checkKey);
+
+function checkKey(event) {
+  console.log(event.key);
+}
+
+window.addEventListener('keyup', checkKey1);
+function checkKey1(event) {
+  console.log(event.key);
+}
 
 
   =================================================
+scroll events:
 
+window.addEventListener('scroll', function () {
+  console.log('scrolling');
+});
+
+    <style>
+      body {
+        height: 2000px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>hello</h1>
+    <script src="./script2.js"></script>
+  </body>
+
+  -------
+  window.addEventListener('wheel', function (event) {
+  //scrolling up
+  if (event.deltaY < 0) {
+    console.log('scrolling up....');
+  } else if (event.deltaY > 0) {
+    console.log('scrolling down');
+  }
+});
+
+-------
+//in some websites we see popup when we scroll the webpage , downwards
+window.addEventListener('scroll', function () {
+  if (window.pageYOffset > 150) {
+    document.body.style.background = 'red';
+  } else {
+    document.body.style.background = 'white';
+  }
+});
 
   =================================================
+  Events on form in javascript:
+  
+  let x = document.getElementById('myInput');
+x.addEventListener('focus', myFocusFunction);
+x.addEventListener('blur', myBlurFunction);
+x.addEventListener('change', function () {
+  console.log(this.value);
+});
+function myFocusFunction() {
+  x.style.background = 'yellow';
+}
+
+function myBlurFunction() {
+  x.style.background = 'white';
+}
+
+x.addEventListener('input', function () {
+  console.log(this.value);
+});
 
 
+ <body>
+    <form action="">
+      <input type="text" id="myInput" />
+    </form>
+    <script src="./script2.js"></script>
+  </body>
   =================================================
-
+Event bubbling and event capturing
 
   =================================================
