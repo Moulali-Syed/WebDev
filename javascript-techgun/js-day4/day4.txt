@@ -1,0 +1,421 @@
+Object: anything can be an object 
+
+Object has properties and Action or function
+
+Object Properties:
+Name , height , mobileNo, Address , weight - Human
+brand, model, variant - Car
+
+object ACtion/function:
+Eat , Walk , Talk , Run , Study - Human
+Drive , Park , Servicing - Car 
+
+Objects in programming:
+Student, Teacher , Course in learning Management System
+Account , Account holder , cashier , bank manager etc in Banking System
+Book , Department etc in library management system 
+
+=============================================================================================
+Properties in Object:
+
+//Object creation
+
+let person = {
+  fname: 'Apple',
+  age: 2,
+  lName: 'Shimla',
+  'full Name': 'Apple Shima',
+};
+console.log(person);
+
+//accessing properties - 2 ways
+//- dot notation
+console.log(person.fname);
+console.log(person.lName);
+console.log(person.age);
+
+//array notation
+console.log(person['fname']);
+console.log(person['lName']);
+console.log(person['age']);
+
+//if the key has space in its name , then it can be accessed only through array notation[but this is not recommended , instead give underscore]
+console.log(person['full Name']);
+
+//any property that doesnot exist , gives result as  undefined
+console.log(person.city); //undefined
+
+//modify values of object properties
+person.fname = 'Banana';
+console.log(person.fname);
+
+//to add new properties
+person.country = 'India';
+console.log(person);
+/*
+{
+  fname: 'Banana',
+  age: 2,
+  lName: 'Shimla',
+  'full Name': 'Apple Shima',
+  country: 'India'
+}
+
+*/
+
+//delete a property
+delete person.lName;
+console.log(person);
+/*
+{
+  fname: 'Banana',
+  age: 2,
+  'full Name': 'Apple Shima',
+  country: 'India'
+}
+*/
+
+//to check if a property is present in the object
+//one way is when we try to access it we get undefined
+//other way is to use in operator - returns true or false
+console.log('height' in person); //false
+console.log('age' in person); //true
+
+//iterating over properties of object - use for in loop
+for (let key in person) {
+  console.log(key + ':' + person[key]);
+  //we must use array notation , dot notation will not work
+}
+
+
+=============================================================================================
+Object Methods in javascript
+
+let person = {
+  fName: 'Moulali',
+  lName: 'Syed',
+  sayHi: function () {
+    console.log('Hi!!!');
+  },
+  sayHappy() {
+    console.log('Happy');
+  },
+
+  sayMorning: () => {
+    console.log('Morning');
+  },
+};
+
+person.age = 25;
+person.sayHello = function () {
+  console.log('Hello');
+};
+
+person.sayHello(); //Hello
+
+function greet() {
+  console.log('Hello !!');
+}
+
+person.sayHello1 = greet;
+person.sayHello1(); //Hello !!
+
+person.sayHi(); //Hi!!!
+person.sayHappy(); //Happy
+
+person.sayMorning(); //Morning
+
+=============================================================================================
+this - keyword
+
+//propeties of one object can accessed inside other object
+
+//if we want to access properties of same object we can use this keyword
+let person = {
+  fName: 'Moulali',
+  lName: 'Syed',
+  sayHello() {
+    console.log('Hello! Iam ' + this.fName + ' I have a ' + car.brand + ' car');
+  },
+};
+
+let car = {
+  brand: 'TATA',
+  model: 'Safari',
+};
+
+person.sayHello(); //Hello! Iam Moulali I have a TATA car
+
+=============================================================================================
+Math Object:
+
+//Math object
+console.log(Math.PI); //3.141592653589793
+
+//eulers number
+console.log(Math.E); //2.718281828459045
+
+var x = 4.7;
+console.log(x); //4.7
+
+//round
+console.log(Math.round(x)); //5
+console.log(Math.round(4.2)); //4
+
+//ceil
+console.log(Math.ceil(x)); //5
+console.log(Math.ceil(4.2)); //5
+
+//floor
+console.log(Math.floor(x)); //4
+console.log(Math.floor(4.1)); //4
+
+//trunc - remove point
+console.log(Math.trunc(x)); //4
+
+//pow - to find power
+console.log(Math.pow(2, 3)); //8
+
+//sqrt
+console.log(Math.sqrt(9)); //3
+
+//find minimum
+console.log(Math.min(2, 09, -1, -200, 8484, 23)); //-200
+
+//find maximun
+console.log(Math.max(12, 89.9, 6232, 81283.56, 982, -1, 0));//81283.56
+
+=============================================================================================
+Generate random number:
+//generates a random number between 0 - 1 , can be 0.123 ... 0.999
+let x = Math.random();
+console.log(x);
+
+//generate a random numebr between 0 to 9
+let num = Math.floor(Math.random() * 10);
+console.log(num);
+
+//generate a random numebr between 0 to 10
+let num1 = Math.floor(Math.random() * 11);
+console.log(num1);
+
+//generate a random numebr between 0 to 99
+let num2 = Math.floor(Math.random() * 100);
+console.log(num2);
+
+//generate a random numebr between 0 to 100
+let num3 = Math.floor(Math.random() * 100);
+console.log(num3);
+
+//generate a random numebr between 1 to 10
+let num4 = Math.floor(Math.random() * 10) + 1;
+console.log(num4);
+
+//generate a random number between given range
+let maxNum = 25;
+let minNum = 15;
+let reqNum = Math.floor(Math.random() * (maxNum - minNum)) + minNum;
+console.log(reqNum);
+
+function getRandom(min, max) {
+  let x = Math.floor(Math.random() * (max - min)) + min;
+  return x;
+}
+
+console.log(getRandom(10, 20)); //10 included and 20 is not included
+
+function getRandom1(min, max) {
+  let x = Math.floor(Math.random() * (max - min + 1)) + min;
+  return x;
+}
+
+console.log(getRandom1(10, 20)); //10 included and 20 is  included
+
+=============================================================================================
+Date Object:
+
+let x = new Date();
+console.log(x); //2022-10-03T01:52:11.446Z
+
+let date1 = new Date(2020, 11, 1, 10, 33, 56, 7); //we can pass 7 parameters
+//year month date hour minutes seconds milliseconds
+//month - 0 to 11
+console.log(date1);
+
+//atleast we must give year and month , else we will get some wrong date of 1970
+
+let date2 = new Date('October 13, 2020 11:12:33');
+
+let curDate = new Date(); //at the time of writing code date is 3 October 2022
+console.log(curDate.getTime()); //gets time in milliseconds example:1664762339573
+
+console.log(curDate.getFullYear()); //2022
+console.log(curDate.getMonth()); //9 means October
+console.log(curDate.getDate()); //3
+
+console.log(curDate.getHours());
+console.log(curDate.getMinutes());
+console.log(curDate.getMilliseconds());
+console.log(curDate.getDay()); // 0- sunday , 6- saturday
+
+curDate.setFullYear(2023);
+console.log(curDate);
+
+curDate.setMonth(0);
+console.log(curDate);
+
+curDate.setDate(2);
+console.log(curDate);
+curDate.setHours(2);
+curDate.setMinutes(12);
+curDate.setSeconds(32);
+curDate.setMilliseconds(12);
+console.log(curDate);
+
+//add 50 days to current date
+curDate.setDate(curDate.getDate() + 50);
+console.log(curDate);
+
+//compare 2 dates
+let d1 = new Date('October 13, 2018 11:12:33');
+let d2 = new Date();
+if (d1 > d2) {
+  console.log('future date');
+} else if (d2 > d1) {
+  console.log('past date');
+} else {
+  console.log('same dates');
+}
+
+=============================================================================================
+new keyword:
+
+var person = {
+  name: 'Apple',
+  age: 2,
+};
+console.log(person.name);
+
+//object creation using new keyword
+var p1 = new Object();
+p1.name = 'Banana';
+p1.age = 1;
+console.log(p1.name);
+console.log(p1); //{ name: 'Banana', age: 1 }
+
+=============================================================================================
+javascript accessors [getters and setters]
+
+var person = {
+  name: 'Apple',
+  age: 1,
+  //   getName: function () {
+  //     return this.name.toUpperCase();
+  //   },
+  get getName() {
+    return this.name.toUpperCase();
+  },
+  set setName(n) {
+    this.name = n.toUpperCase();
+  },
+};
+console.log(person.name); //Apple
+
+//print name in capital letters
+console.log(person.name.toUpperCase());
+// console.log(person.getName());
+console.log(person.getName); //we can call get function as a property
+
+//we were modifying using
+person.name = 'Banana';
+//but i want to modify when data is getting enetered and store in capital letters
+//then we can use set function
+
+person.setName = 'hello';
+console.log(person.name);
+console.log(person.getName);
+
+
+=============================================================================================
+Object Constructor function in javascript:
+
+var student1 = {
+  firstName: 'Apple',
+  lName: 'Shimla',
+  age: 1,
+  class: 1,
+};
+
+//we can create a blue print , if we want to create multiple objects with same properties
+//we can use object constructor function
+
+function Student(fName, lName, age, cls) {
+  this.firstName = fName;
+  this.lastName = lName;
+  this.age = age;
+  this.class = cls;
+}
+
+var stud1 = new Student('banana', 'ap', 2, 1);
+console.log(stud1);
+
+//now we can create multiple objects
+var stud2 = new Student('grapes', 'mp', 3, 2);
+var stud3 = new Student('pineapple', 'pa', 2, 3);
+
+//add a property to particular object
+stud1.nationality = 'Indian';
+console.log(stud1);
+
+//add a method to particular object
+stud1.name = function () {
+  return this.firstName + ' ' + this.lastName;
+};
+
+console.log(stud1);
+console.log(stud1.name());
+
+=============================================================================================
+javascript prototypes:
+
+//we can add methods and objects to constructor function using prototypes
+
+function Student(fName, lName, age, cls) {
+  this.firstName = fName;
+  this.lastName = lName;
+  this.age = age;
+  this.class = cls;
+}
+
+Student.prototype.nationality = 'Indian';
+
+Student.prototype.name = function () {
+  return this.firstName + ' ' + this.lastName;
+};
+var stud1 = new Student('Apple', 'Shimla', 2, 1);
+var stud2 = new Student('Banana', 'AP', 3, 2);
+//Now after some code i wanted to add some properties and methods to constructor function , so that it get added to all objects
+
+console.log(stud1);
+console.log(stud1.nationality); //Indian
+console.log(stud2.nationality); //Indian
+
+console.log(stud1.name());
+console.log(stud2.name());
+
+//prototype is inherited by all javascript functions , to which we can add the required methods and properties
+
+=============================================================================================
+
+
+
+=============================================================================================
+
+
+
+=============================================================================================
+
+
+
+
+=============================================================================================
