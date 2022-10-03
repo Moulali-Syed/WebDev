@@ -481,7 +481,224 @@ let w1 = box.clientWidth;//border is not included
   </body>
 
 =================================================
+DOM Events:
+DOM events are actions that occur as a result of user action or as 
+ result of state chnage of elements of a DOM tree 
 
+Examples of HTML events:
+When a user clicks the mouse
+When a webpage has loaded
+when an image has been loaded
+when mouse moves over an element
+when an input field is chnaged
+when an html form is submitted
+when a user strokes a key
 
+search list of DOM events in google and find any required events 
 
+1.
+onclick event:
+ <body>
+    <button id="id" onclick="btnClick()">Click Me!</button>
+    <script src="./script1.js"></script>
+  </body>
+
+  //onclick event
+function btnClick() {
+  alert('button was clicked');
+}
+
+2. click event using addEventListener
+  <body>
+    <button id="btn">Click Me!</button>
+    <script src="./script1.js"></script>
+  </body>
+
+  let btn = document.getElementById('btn');
+btn.addEventListener('click', btnClick);
+
+3.
+//using anonymous function
+btn.addEventListener('click', function () {
+  alert('btn clicked');
+});
+
+we can add multiple events on same element
+
+let btn = document.getElementById('btn');
+
+btn.addEventListener('click', function () {
+  console.log('btn clicked');
+});
+
+btn.addEventListener('mouseover', function () {
+  console.log('mouseover is activated');
+});
+
+btn.addEventListener('mouseout', function () {
+  console.log('mouse out is activated');
+});
 =================================================
+
+Remove Event Listener:
+let btn = document.getElementById('btn');
+
+function click1() {
+  console.log('click activated');
+}
+
+function click2() {
+  console.log('click2 activated');
+}
+
+btn.addEventListener('click', click1);
+btn.addEventListener('click', click2);
+
+btn.removeEventListener('click', click2);
+
+ <body>
+    <button id="btn">Click Me!</button>
+    <script src="./script1.js"></script>
+  </body>
+
+  =================================================
+PageLoad events:
+ When page is loaded first DOMContentLoaded will be triggered
+ the browser fully loads HTML and complete building DOM tree ,however it hasnot loaded
+ external resources like stylesheets and images In this event you can start selecting DOM
+ nodes or intialize the interface
+
+ load - the browser fully loaded the HTML and also external resources like images and stylesheets
+ When you leave the page the following events will fire in sequence
+
+
+ //place some heavy image in the html file to see that DOMContentLoaded and then load 
+window.addEventListener('DOMContentLoaded', function () {
+  console.log('DOM tree created');
+});
+
+window.addEventListener('load', function () {
+  console.log('Fuly loaded');
+});
+
+
+ <body>
+    <button id="btn">Click Me!</button>
+
+    <img id="img1" src="./img.png alt="image" height="300">
+    <script src="./script1.js"></script>
+  </body>
+
+let img = document.getElementById('img1');
+img.addEventListener('load', function () {
+    console.log('fully loaded');
+})
+  =================================================
+Mouse Events:
+
+1.
+function fun() {
+  alert('click event');
+}
+
+    <style>
+      #box {
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box" onclick="fun()"></div>
+    <script src="./script1.js"></script>
+  </body>
+
+2.
+function fun() {
+  alert('right click event');
+}
+   <style>
+      #box {
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box" oncontextmenu="fun()"></div>
+    <script src="./script1.js"></script>
+  </body>
+
+  3.
+  function fun() {
+  alert('double click event');
+}
+
+    <style>
+      #box {
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box" ondblclick="fun()"></div>
+    <script src="./script1.js"></script>
+  </body>
+
+  4.
+
+  function fun() {
+  alert('event activated');
+}
+
+    <style>
+      #box {
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box" onmousedown="fun()"></div>
+    <script src="./script1.js"></script>
+  </body>
+
+  5.
+  function fun() {
+  alert('event activated');
+}
+  <body>
+    <div id="box" onmouseup="fun()"></div>
+    <script src="./script1.js"></script>
+  </body>
+
+  6.
+   <body>
+    <div id="box" onmouseover="fun()"></div>
+    <script src="./script1.js"></script>
+  </body>
+
+  7.
+
+  <body>
+    <div id="box" onmouseout="fun()"></div>
+    <script src="./script1.js"></script>
+  </body>
+  =================================================
+
+
+  =================================================
+
+
+  =================================================
+
+
+  =================================================
+
+
+  =================================================
