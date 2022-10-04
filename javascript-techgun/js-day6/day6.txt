@@ -254,7 +254,7 @@ console.log(navigator.javaEnabled());
 ==========================================================================================
 
 Screen Object:
-used by analytical software , to get information about the websites are opened in which website 
+screen , navigator used by analytical software , to get information about the websites are opened in which website 
 
 console.log(screen.height);
 console.log(screen.width);
