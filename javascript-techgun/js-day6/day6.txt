@@ -1,0 +1,262 @@
+preventDefault:
+helps to change default behaviour of DOM
+
+suppose i have a click , but i want to restrict it going to href link on a single click
+
+
+  <body>
+    <a href="https://www.google.com" id="anchor">click me</a>
+    <script src="./script.js"></script>
+  </body>
+
+let link = document.getElementById('anchor');
+link.addEventListener('click', function (e) {
+  console.log('link clicked...');
+  e.preventDefault();
+});
+
+// this changes default behaviour of link , instead of going to google.com , it just shows a console output
+
+==========================================================================================
+
+Suppose i created a form  and i entered data clicked on submit , page refreshs and the content will be gone
+
+  <body>
+    <form action="" id="myForm">
+      <input type="text" />
+      <input type="submit" />
+    </form>
+
+    <script src="./script.js"></script>
+  </body>
+
+  //whenever we want to change the default behaviour we can use preventDefault()
+let form = document.getElementById('myForm');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+});
+
+==========================================================================================
+Browser object Model [BOM]  - is used to interact with the Browser
+The window object refers to  a window in browser - in browser we have multiple tabs
+
+All global javascript objects , functions , and varibles with var keyword automatically
+become members of the window object 
+
+global varibales are properties of window object
+global functions are methods of window object
+
+var x = 'hello';
+console.log(window.x);
+
+//variables declared with var will only become properties of window , but not those with let , const
+
+function xyz() {
+  console.log('hi');
+}
+
+window.xyz();
+
+//window is defalut object of browser so we can write below way
+xyz();
+
+//alert , confirm , prompt are methods of window object
+//we can call with window
+window.alert();
+window.prompt();
+window.confirm();
+
+//we can call them directly as well
+
+alert();
+prompt();
+confirm();
+
+//whenever we open a website , browser will create a window object for us
+
+==========================================================================================
+
+Window Object:
+
+ <body>
+    <button id="btn1">Google</button>
+    <script src="./script.js"></script>
+  </body>
+
+  //to know the height and width of the content window
+console.log(window.innerHeight);
+console.log(window.innerWidth);
+
+//to know the height and width of the complete browser tab
+console.log(window.outerHeight);
+console.log(window.outerWidth);
+
+//open a new window - some websites show popup windows  , lets create it
+let btn = document.getElementById('btn1');
+let url = 'https://www.google.com';
+let features = 'height=500,width=500';
+btn.addEventListener('click', function () {
+  //   window.open(url,Name,features);
+  window.open(url, 'google', features);
+});
+
+
+//popup window creation , opening a different link in popup window and closing it
+
+ <body>
+    <button id="btn1">Google</button>
+    <button id="btn2">Yahoo</button>
+    <button id="btn3">Close</button>
+    <script src="./script.js"></script>
+  </body>
+
+
+//open a new window - some websites show popup windows  , lets create it
+let btn = document.getElementById('btn1');
+let url = 'https://www.google.com';
+let features = 'height=500,width=500';
+let win;
+btn.addEventListener('click', function () {
+  //   window.open(url,Name,features);
+  win = window.open(url, 'google', features); // this returns a id of pop up window, which helps in closing using its id
+});
+
+let btn2 = document.getElementById('btn2');
+btn2.addEventListener('click', function () {
+  window.open('https://yahoo.com', 'google', features);
+});
+//check in google for remaining fetures of window.open
+//name parameter is very useful , because in above we are using same name as google
+//this will ensure the links open in same pop up window
+//that is when i click btn1 - a window with google.com is opened
+//now when i click on btn2 - the url of the window which is already opened gets changed
+
+//we can close the pop up window , by using id of the popup window , as stored win above
+let btn3 = document.getElementById('btn3');
+btn3.addEventListener('click', function () {
+  win.close();
+});
+
+==========================================================================================
+Timeout and TImeInterval:
+
+Timeout: after opening website , after few seconds i want to show alert or message
+
+//setTimeout() - is part of window
+
+// setTimeout returns an id which we can store
+let timeoutId = setTimeout(myFunc, 5000);
+function myFunc() {
+  alert('please subscribe');
+}
+
+//we can use the timeoutId , to stop the timeout out function getting executed , with in the 5000 milliseconds
+//same as i have an alarm at 5 , but i got up by 4 then i will turn off alarm
+
+//we apply clearTimeout , to check some condition and remove the timeout
+//like some one is already subscribed then no need to show, then check the condition using some if and clear timeout
+clearTimeout(timeoutId);
+
+
+------------------------------------
+  <body>
+    <button id="btn">clear Interval</button>
+    <script src="./script1.js"></script>
+  </body>
+
+  //setInterval will execute at every regular interval of time, like below code will execute every 2 seconds
+//setInterval returns an id when it get executed
+let t1 = setInterval(fun, 2000);
+function fun() {
+  console.log('please subscribe');
+}
+
+let btn = document.getElementById('btn');
+btn.addEventListener('click', function () {
+  clearInterval(t1);
+});
+
+
+==========================================================================================
+Location object - belongs to window
+
+used to know information of current page url , redirect from one url to other url
+
+location properties:
+
+console.log(location.href);
+console.log(location.pathname);
+console.log(location.protocol);
+/*
+http://127.0.0.1:5500/js-day6/index.html?
+ /js-day6/index.html
+ http:
+*/
+
+3 ways of redirecting
+1.
+  <body>
+    <button id="btn" onclick="fun()">Redirect</button>
+    <script src="./script1.js"></script>
+  </body>
+
+
+  function fun() {
+  window.location = 'https://www.google.com';
+}
+
+2.
+function fun() {
+  location.href = 'https://www.google.com';
+}
+
+3.
+
+function fun() {
+  location.assign('https://www.google.com');//stores in history , above 1, 2 intenally calls this assign
+}
+
+
+replace method , doesnot make entry in history
+
+
+function fun() {
+  location.replace('https://www.google.com'); //doesnot store in history, back button in browser will not work now
+}
+
+
+reload method:
+ <body>
+    <button id="btn" onclick="fun()">Reload</button>
+
+    <script src="./script1.js"></script>
+  </body>
+
+  //we can give a button in webpage  to refresh the page
+function fun() {
+  location.reload('https://www.google.com');
+}
+
+==========================================================================================
+Navigator object in javascript:
+
+get browser information , browser capabilities like javascript is enabled
+
+part of window object
+
+console.log(navigator.appName);
+console.log(navigator.appVersion);
+console.log(navigator.appCodeName);
+console.log(navigator.cookieEnabled); //returns true or false , and say enable for best experience
+console.log(navigator.userAgent);
+console.log(navigator.javaEnabled());
+
+==========================================================================================
+
+Screen Object:
+used by analytical software , to get information about the websites are opened in which website 
+
+console.log(screen.height);
+console.log(screen.width);
+console.log(screen.colorDepth); //screen quality can be known
+//we can Screen Orientation - which view is used portrait or landscape

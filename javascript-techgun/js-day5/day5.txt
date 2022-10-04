@@ -774,6 +774,173 @@ x.addEventListener('input', function () {
     <script src="./script2.js"></script>
   </body>
   =================================================
-Event bubbling and event capturing
+Event bubbling and event capturing:
+
+consider below html
+<body>
+  <div id='container'>
+    <button id='btn'>Click Me!</button>
+  </div>
+</body>
+
+suppose i have a click event on the body, div , button
+
+if i click on body - only one event triggered
+if i  click on div container - then two events will be triggered because div is inside body
+if i click on button - three events will be triggered because btn is inside div , div is inside body
+
+
+Event Bubbling: [think of bubble]
+In the event bubbling model an event starts at the most specific element and then flows upward towards the least 
+specific element (document or even window)
+
+When u click on btn , click event happens in follwoing order 
+btn
+div with id container
+body
+html
+document
+
+
+Event capturing:
+In the event capturing model , an event starts at the least specific element and flows downward towards
+the most specific element
+When u click the button the click event occurs in following order
+document
+html
+body
+div with id container
+button
+
+syntax:
+addEventListener(event,function,useCapture);
+
+The default value is false , which will use the bubbling propogation
+when the value is set to true , the event uses the capturing propogation
+
+
+Event bubbling example:
+
+    <style>
+      body {
+        padding: 100px;
+        background-color: cornsilk;
+      }
+
+      #mydiv {
+        padding: 50px;
+        background-color: navy;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mydiv">
+      <button id="btn">Click Me</button>
+    </div>
+    <script src="./script3.js"></script>
+  </body>
+
+
+let d = document.getElementById('mydiv');
+let b = document.getElementById('btn');
+
+b.addEventListener('click', btnClicked); //default 3rd parameter is false means bubbling
+d.addEventListener('click', divClicked);
+document.body.addEventListener('click', bodyClicked);
+
+function btnClicked() {
+  console.log('btn clicked');
+}
+
+function divClicked() {
+  console.log('div clicked');
+}
+
+function bodyClicked() {
+  console.log('body clicked');
+}
+
+/*
+btn clicked
+ div clicked
+body clicked
+
+*/
+
+
+Event capturing example:
+-----------------------
+
+    <style>
+      body {
+        padding: 100px;
+        background-color: cornsilk;
+      }
+
+      #mydiv {
+        padding: 50px;
+        background-color: navy;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mydiv">
+      <button id="btn">Click Me</button>
+    </div>
+    <script src="./script3.js"></script>
+  </body>
+
+  let d = document.getElementById('mydiv');
+let b = document.getElementById('btn');
+
+b.addEventListener('click', btnClicked, true); //default 3rd parameter is false means bubbling
+d.addEventListener('click', divClicked, true);
+document.body.addEventListener('click', bodyClicked, true);
+
+function btnClicked() {
+  console.log('btn clicked');
+}
+
+function divClicked() {
+  console.log('div clicked');
+}
+
+function bodyClicked() {
+  console.log('body clicked');
+}
+
+/*
+body clicked
+div clicked
+btn clicked
+
+*/
+
+
+stopPropogation:
+-----------------
+we can stop propogation of events , that is when i click on btn , i dont want the events of div and body
+then to the click event of btn i will pass a parameter event and use it to stop propogation
+
+let d = document.getElementById('mydiv');
+let b = document.getElementById('btn');
+
+b.addEventListener('click', btnClicked); //default 3rd parameter is false means bubbling
+d.addEventListener('click', divClicked);
+document.body.addEventListener('click', bodyClicked);
+
+function btnClicked(event) {  //---------------->1
+  console.log('btn clicked');
+  event.stopPropogation(); //------------------->2
+}
+
+function divClicked(event) {
+  console.log('div clicked');
+  event.stopPropogation();
+}
+
+function bodyClicked() {
+  console.log('body clicked');
+}
 
   =================================================
