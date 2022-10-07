@@ -1,0 +1,107 @@
+1.title tag
+add it in head tag  
+    <title>Five Tips for Front end WebDevelopment</title>
+    this will be displayed on tab
+
+2.heading
+    we have h1 to h6
+    h1 - is most important heading , h6 is least significant
+
+3.Paragraph
+    <p></p>
+
+4.To have content in a new line
+    <br>
+    this breaks the content and start from new line
+
+5.If there is need to add multiple spaces use
+    &nbsp;
+
+6.unordered list
+    <ul>
+      <li>Frontend Focus</li>
+      <li>CSS Weekly</li>
+      <li>JavaScript Weekly</li>
+    </ul>
+
+    change type of bullet
+    <ul type="circle">
+    <ul type="square">
+    <ul type="disc"> - is default
+
+7.ordered list 
+
+    <ol>
+      <li>Hi</li>
+      <li>Good</li>
+      <li>Day</li>
+    </ol>
+
+default is numbered list
+    <ol type="A"> - A,B,C..
+    <ol type="a"> - a,b,c..
+    <ol type="i> - i,ii,iii
+    <ol type="I"> - I,II,..
+
+    We can also specify the start attribute
+        <ol type="A" start="10"> - J,K,L..
+    <ol type="a" start="10"> - j,k,l..
+    <ol type="i" start="10"> - x,xi,xii..
+    <ol type="I" start="10"> - X,XI,XII,..
+
+8.Nested list   :
+    <ol>
+      <li>
+        <h1>Heading 1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
+          perferendis.
+        </p>
+      </li>
+      <li>
+        <h1>Heading 1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
+          perferendis.
+        </p>
+      </li>
+      <li>
+        <h1>Heading 1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
+          perferendis.
+        </p>
+      </li>
+      <li>
+        <h1>Heading 1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
+          perferendis.
+        </p>
+        <ul type="circle">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </li>
+      <li>
+        <h1>Heading 1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
+          perferendis.
+        </p>
+      </li>
+    </ol>
+
+9. Adding Image:
+        
+    <img src="./img.png" alt="An Image" />
+
+    We can specify height and width of Image
+    <img src="./img.png" alt="An Image" height="300px" width="300px" /> - if not specified default is px
+
+    <img src="./img.png" alt="An Image" height="300px" width="50%" />
+    50% means 50% of parent width[or container width]
+
+10.Adding links
+    
