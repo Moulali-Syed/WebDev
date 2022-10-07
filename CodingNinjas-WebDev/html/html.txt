@@ -104,4 +104,119 @@ default is numbered list
     50% means 50% of parent width[or container width]
 
 10.Adding links
-    
+        <!-- links -->
+    <a href="https://google.com">Google</a>
+    <!-- to open link in new tab -->
+    <a href="www.google.com" target="_blank">GotoGoogle</a>
+    <!-- image as link text -->
+    <a href="www.google.com">
+      <img src="imp.png" alt="imageAsLink" />
+    </a>
+
+11.different html pages in same application to be linked
+
+    <ul>
+      <li>
+        <a href="./ind.html">General</a>
+      </li>
+      <li>
+        <a href="./am.html">About</a>
+      </li>
+    </ul>
+
+    for internal links with in a page use id 
+    ------------------------------------------------------------------------------------
+    part2
+
+  1.grouping of html elements
+
+    <div></div> - block element
+    helps structure code better and apply styles
+
+    <span></span> - inline element , without any particular meaning
+
+  2.Semantic tags
+    <nav></nav>
+    <header></header>
+    <main></main> -  for content in page
+    <footer> </footer>
+    <section></section>
+    <aside></aside>
+
+  3.Adding internal links to webpage
+
+    go to a particular section , provide an id to that section , then pass it in href
+    <p><a href="#comments">GoToComments</a></p>
+
+      <section id="comments">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ut.
+      </p>
+      <a href="#">GoToTop</a>
+    </section>
+
+    to go to top of page:
+    give value of href as #
+
+  4.block vs inline element
+    block element start in a new line [h1to h6, p , div,ul]
+    inline element donot start in new line, takes as much space required and donot block complete
+    line [span,a,img,b]
+
+   5.Text formatting tags
+   <b></b> - to bold ,instead use <strong></strong> - word of importance
+   <i></i> - italic , instead use <em></em> 
+
+   <sub></sub> - subscript
+   <sup></sup> - superscript
+   <del></del>
+   <ins></ins>
+   <blockquote></blockquote>
+   <q></q> - quotations
+
+   6.Special Characters
+    &nbsp; - adds a space
+    &lt; - <
+    &gt; - >
+    &apos; - '[apostraphe]
+    &amp; - &
+
+    &nbsp; - provides 1 space
+     &ensp; - provides 2 space
+      &emsp; - provides 4 space
+
+  6.table
+
+      <table border="4">
+      <caption>Demo Table</caption>
+      <tr>
+        <th></th>
+        <th>Column1</th>
+        <th>Column2</th>
+        <th>Column3</th>
+      </tr>
+      <tr>
+        <th>Row1</td>
+        <td>Cell 1, 1</td>
+        <td>Cell 1,2</td>
+        <td>Cell 1,3</td>
+      </tr>
+      <tr>
+        <th>Row2</th>
+        <td>Cell 2, 1</td>
+        <td>Cell 2,2</td>
+        <td>Cell 2,3</td>
+      </tr>
+      <tr>
+        <th>Row3</th>
+        <td>Cell 3, 1</td>
+        <td>Cell 3,2</td>
+        <td>Cell 3,3</td>
+      </tr>
+    </table>
+
+  We can specify colspan on th element ,also on any td element
+  <th colspan="2">Column1</th>
+
+  similarly we can have rowspan
+  <th rowspan="2">Row1</th>
