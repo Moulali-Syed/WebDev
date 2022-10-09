@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- describe about website , helps in SEO -->
+    <meta name="description" content="" />
+    <meta name="keywords" content="coding,html,css" />
+    <meta name="author" content="Moulali Syed" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- media tags -->
+    <audio src="audio.mp3" controls></audio>
+    <!-- controls attribute shows the audio controls -->
+
+    <!-- if we have multiple formats of audio files then use source tag inside audio -->
+    <audio controls>
+      <source src="audio.mp3" type="audio/mp3" />
+      <source src="audio.ogg" type="audio.ogg" />
+    </audio>
+
+    <!-- video tag -->
+    <video src="video.mp4" controls></video>
+    <br />
+    <video controls height="200" width="200">
+      <source src="video.mp4" type="video/mp4" />
+      browser doesnot support video
+      <!-- text will be shown only if browser doesnot support video -->
+    </video>
+
+    <!-- figure tag -->
+    <figure>
+      <img src="img.png" alt="Image" />
+      <figcaption>AN Image description</figcaption>
+    </figure>
+  </body>
+</html>

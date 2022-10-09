@@ -1,0 +1,28 @@
+p {
+  color: blue;
+  font-size: 12px;
+  font-family: sans-serif;
+  font-family: serif;
+}
+header {
+  height: 400px;
+}
+
+article {
+  width: 1000px;
+}
+/* h4 {
+  text-transform: lowercase;
+  text-transform: uppercase;
+} */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.cursive {
+  font-family: cursive;
+}
+#blog-desc {
+  color: #314831;
+}

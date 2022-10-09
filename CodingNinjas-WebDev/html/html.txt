@@ -220,3 +220,215 @@ default is numbered list
 
   similarly we can have rowspan
   <th rowspan="2">Row1</th>
+  ------------------------------------------------------------------------------------
+  forms:
+  creating a simple form 
+
+      <form >
+      <div>
+        <label for="username">UserName</label><br />
+        <input type="text" id="username" required />
+      </div>
+      <div>
+        <label for="password">Password</label><br />
+        <input type="password" id="password" required />
+      </div>
+      <div>
+        <input type="submit" value="submit" />
+      </div>
+    </form>
+
+    to link label and input tag - we have for in label tag and id in input tag , both value should be same
+    to mark a field as compulsory - provide attribute required
+
+    The attribute used to provide advisory context - title
+    means when we provide title attribute to a tag, when u hover on it , the value will be 
+    visible over it 
+
+
+          <div>
+        <!-- only accepts number -->
+        <input type="number" name="" id="" />
+      </div>
+      <div>
+        <input type="time" name="" id="" />
+      </div>
+      <div>
+        <!-- matches email id someName..@mail.com -->
+        <input type="email" name="" id="" />
+      </div>
+      <div>
+        <!-- checks for https:// -->
+        <input type="url" name="" id="" />
+      </div>
+      <div>
+        <!-- a slider ,can also provide min and max values , and also step value instead 1 by 1 we 
+        can specify step=10 -->
+        <input type="range" name="" id="" min="10" max="50" step="10" />
+      </div>
+
+      <div>
+      <!-- placeholder shows text that we want to enter in format ,or any text, once we start writing
+        it will become invisible -->
+        <input type="email" name="" id="" placeholder="abc@example.com" />
+      </div>
+
+      The default type attribute of input is text 
+
+      <div>
+        <input type="week" name="" id="" />
+      </div>
+      <div>
+        <!-- will not be visible in browser -->
+        <input type="hidden" name="" />
+      </div>
+
+Attributes of form elements :
+name="value"
+name attribute is very important field , this helps in passing data further 
+
+value="India"
+to provide some default value we can use value attribute 
+
+    <form action="">
+      <div>
+        <label for="emailId">Email </label><br />
+        <!-- name attribute is very important , to fetch the data being entered in the field -->
+        <input type="email" name="email" id="emailId" />
+      </div>
+      <div>
+        <label for="country">Country</label><br />
+        <!-- to have some default value we can provide value attribute -->
+        <!-- we also have a attribute disabled , it cant be edited-->
+        <input
+          type="country"
+          name="country"
+          id="country"
+          value="India"
+          disabled
+        />
+      </div>
+      <div>
+        <input type="submit" value="submit" />
+      </div>
+    </form>
+
+radio button and check box
+radio button - one out of available options to be selected
+checkbox - we can select multiple checkbox at a time
+
+ <form action="">
+      <p>Gender</p>
+      <!-- specify same name attribute value to all the radio buttons, then we can select only
+      one , others will be unselected
+      name attribute is used to collect form data for further processing 
+      we must also specify value attribute also-->
+      <input type="radio" name="gender" value="male" />Male<br />
+      <input type="radio" name="gender" value="female" id="" />Female<br />
+      <input
+        type="radio"
+        name="gender"
+        value="others"
+        id=""
+        checked
+      />Others<br />
+      <input type="submit" value="submit" />
+
+      <p>Courses</p>
+      <!-- If we want user to select morethan one option , use checkbox -->
+      <input type="checkbox" name="course" value="c++" />C++<br />
+      <input type="checkbox" name="course" value="Java" checked />Java<br />
+      <input type="checkbox" name="course" value="python" />Python<br />
+    </form>
+
+Select , Textarea ,  button 
+
+ <form action="">
+      <p>Month</p>
+      <!-- to allow multiple selection , we add attribute multiple -->
+      <select name="month_selected" id="" multiple>
+        <option value="">Jan</option>
+        <option value="" selected>Feb</option>
+        <option value="">Mar</option>
+        <option value="">Apr</option>
+      </select>
+
+      <p>Share your experience</p>
+      <!-- to allow multiple line of input -->
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <br />
+      <!-- we can create button in 2 ways - 1.using input type="button"
+      2nd way use button tag-->
+      <input type="button" value="button1" />
+      <!-- button tag has type attribute with 3 values - button,submit[default],reset -->
+      <button type="button">btn1</button>
+      <button type="submit">Submit</button>
+      <button type="reset">reset</button>
+      <!-- we can have image in button -->
+      <button type="button">
+        <img src="img.png" alt="Image" />
+      </button>
+    </form>
+
+
+form attributes:
+
+we can action - in this we specify where the data should get submitted
+method - it is the http method [get,put,post,delete]
+post - to send data to server, and want to manke some changes to it
+
+When u specify , method="get"
+whatever data u r giving in form will become part of url 
+
+When u specify post , data will not seen in url
+can be seen through chrome dev tools - Network --> Headers tab 
+
+<form action="http://backendURL" method="post"></form>
+
+Media Tags:
+
+ <body>
+    <!-- media tags -->
+    <audio src="audio.mp3" controls></audio>
+    <!-- controls attribute shows the audio controls -->
+
+    <!-- if we have multiple formats of audio files then use source tag inside audio -->
+    <audio controls>
+      <source src="audio.mp3" type="audio/mp3" />
+      <source src="audio.ogg" type="audio.ogg" />
+    </audio>
+
+    <!-- video tag -->
+    <video src="video.mp4" controls></video>
+    <br />
+    <video controls height="200" width="200">
+      <source src="video.mp4" type="video/mp4" />
+      browser doesnot support video
+      <!-- text will be shown only if browser doesnot support video -->
+    </video>
+
+    <!-- figure tag -->
+    <figure>
+      <img src="img.png" alt="Image" />
+      <figcaption>AN Image description</figcaption>
+    </figure>
+  </body>
+
+
+  favicon and meta tags:
+  ======================
+      <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    href - is used to specify the path of favicon image 
+
+       <!-- describe about website , helps in SEO -->
+    <meta name="description" content="" />
+    <meta name="keywords" content="coding,html,css" />
+    with respect to SEO - headings, and title are also important
+     <meta name="author" content="Moulali Syed" />
+
+
+
+
+
+

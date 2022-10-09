@@ -1,0 +1,142 @@
+Whenever we see a blog website we have
+
+<body>
+    <header>
+
+    <header>
+    <main>
+        <h1></h1>
+        <article></article>
+        <aside></aside>
+    </main>
+
+1.
+Change color of paragraph:
+    we can use inline style
+         <p style="color: red">
+            Don’t you just love exploring beautiful and neat sites with a clean
+          </p>
+    
+2.
+Change size of text
+    <p style="color: red; font-size: 30px"></p>
+
+    We can also specify styles inside style tag , inside the head tag[Internal CSS]
+    <style>
+    p{
+        color:blue;
+        font-size:12px;
+        font-family:serif;
+    }
+    <style>
+
+3.Adding style using external CSS
+<link rel="stylesheet" type="text/css" href="style.css">
+
+4.preference of rules:
+If there are multiple rules , the last one will win 
+suppose we have style tag and link in head of html file
+then styles will be depending the last occuring style tag or link 
+
+Inline css has highest priority
+
+5.Chrome dev tools:
+    Inspect webpage - select the element u want from webpage - go to styles tab
+    and see the whatever styles applied to it 
+
+6.Setting height and width:
+
+header {
+  height: 400px;
+}
+
+article {
+  width: 1000px;
+}
+
+7. change case of text to upper
+ h4 {
+  text-transform: lowercase;
+  text-transform: uppercase;
+}
+
+8. class
+to apply style to a bunch of elements we can use class 
+
+ <h1 class="uppercase" >Five tips for front-end web development</h1>
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+We can have morethan one class
+<h4 class="uppercase cursive">Version Control</h4>
+.cursive {
+  font-family: cursive;
+}
+
+
+9.id selector : identify one element from all 
+
+ <p id="blog-desc">Coding Ninjas Official Blog</p>
+
+#blog-desc {
+  color: #314831;
+}
+
+
+10.Types of selectors:
+    element selector - p{
+
+    }
+
+    class selector - .className{
+
+    }
+
+    id selector - #id{
+
+    }
+    We can apply inline style 
+
+    final rule that is applied based on specificity
+   inlinestyle> id>class>element selector
+
+11. grouping and nesting of css selectors:
+    h1,p{
+        color:blue;
+    }
+
+    h1,.uppercase,#id{
+        font-family:serif;
+    }
+
+
+    Select only those h4 which are inside li
+    li h4{
+
+    }
+    select p which are inside the given id element
+    #site-desc p{
+
+    }
+
+    select p which are inside the given class element
+    .uppercase p{
+
+    }
+
+12. change color on hover[pseudo class ]
+
+    #blog-title:hover{
+        color:yellow;
+    }
+
+13.font-size
+     font-size: 12px;
+
+14.comment in css 
+ /*
+ */
+
+15.

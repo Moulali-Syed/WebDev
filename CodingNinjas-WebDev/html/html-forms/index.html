@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="username">UserName</label><br />
+        <input type="text" id="username" required title="enter your name" />
+      </div>
+      <div>
+        <label for="password">Password</label><br />
+        <input type="password" id="password" required />
+      </div>
+      <div>
+        <input type="submit" value="submit" />
+      </div>
+      <div>
+        <!-- only accepts number -->
+        <input type="number" name="" id="" />
+      </div>
+      <div>
+        <input type="time" name="" id="" />
+      </div>
+      <div>
+        <!-- matches email id someName..@mail.com -->
+        <input type="email" name="" id="" />
+      </div>
+      <div>
+        <!-- checks for https:// -->
+        <input type="url" name="" id="" />
+      </div>
+      <div>
+        <!-- a slider ,can also provide min and max values , and also step value instead 1 by 1 we 
+        can specify step=10 -->
+        <input type="range" name="" id="" min="10" max="50" step="10" />
+      </div>
+
+      <div>
+        <input type="email" name="" id="" placeholder="abc@example.com" />
+      </div>
+
+      <div>
+        <input type="week" name="" id="" />
+      </div>
+      <div>
+        <!-- will not be visible in browser -->
+        <input type="hidden" name="" />
+      </div>
+    </form>
+
+    <form action="">
+      <div>
+        <label for="emailId">Email </label><br />
+        <!-- name attribute is very important , to fetch the data being entered in the field -->
+        <input type="email" name="email" id="emailId" />
+      </div>
+      <div>
+        <label for="country">Country</label><br />
+        <!-- to have some default value we can provide value attribute -->
+        <!-- we also have a attribute disabled , it cant be edited-->
+        <input
+          type="country"
+          name="country"
+          id="country"
+          value="India"
+          disabled
+        />
+      </div>
+      <div>
+        <input type="submit" value="submit" />
+      </div>
+    </form>
+
+    <form action="">
+      <p>Gender</p>
+      <!-- specify same name attribute value to all the radio buttons, then we can select only
+      one , others will be unselected
+      name attribute is used to collect form data for further processing 
+      we must also specify value attribute also-->
+      <input type="radio" name="gender" value="male" />Male<br />
+      <input type="radio" name="gender" value="female" id="" />Female<br />
+      <input
+        type="radio"
+        name="gender"
+        value="others"
+        id=""
+        checked
+      />Others<br />
+      <input type="submit" value="submit" />
+
+      <p>Courses</p>
+      <!-- If we want user to select morethan one option , use checkbox -->
+      <input type="checkbox" name="course" value="c++" />C++<br />
+      <input type="checkbox" name="course" value="Java" checked />Java<br />
+      <input type="checkbox" name="course" value="python" />Python<br />
+    </form>
+
+    <form action="">
+      <p>Month</p>
+      <!-- to allow multiple selection , we add attribute multiple -->
+      <select name="month_selected" id="" multiple>
+        <option value="">Jan</option>
+        <option value="" selected>Feb</option>
+        <option value="">Mar</option>
+        <option value="">Apr</option>
+      </select>
+
+      <p>Share your experience</p>
+      <!-- to allow multiple line of input -->
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <br />
+      <!-- we can create button in 2 ways - 1.using input type="button"
+      2nd way use button tag-->
+      <input type="button" value="button1" />
+      <!-- button tag has type attribute with 3 values - button,submit[default],reset -->
+      <button type="button">btn1</button>
+      <button type="submit">Submit</button>
+      <button type="reset">reset</button>
+      <!-- we can have image in button -->
+      <button type="button">
+        <img src="img.png" alt="Image" />
+      </button>
+    </form>
+
+    <form action="http://backendURL" method="post"></form>
+  </body>
+</html>
