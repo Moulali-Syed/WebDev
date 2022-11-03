@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+.container {
+  display: flex;
+  border: 6px solid black;
+  /* column-gap: 20px; */
+  flex-wrap: wrap; /* we must set wrap */
+  /* row-gap: 20px; */
+  gap: 40px 20px;
+}
+
+.flex-item {
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.item-1 {
+  background-color: #b4bf35;
+}
+
+.item-2 {
+  background-color: red;
+}
+.item-3 {
+  background-color: green;
+}
+.item-4 {
+  background-color: blue;
+}
+.item-5 {
+  background-color: yellow;
+}
+.item-6 {
+  background-color: yellowgreen;
+}
+.item-7 {
+  background-color: pink;
+}
+.item-8 {
+  background-color: purple;
+}
+.item-9 {
+  background-color: orangered;
+}
